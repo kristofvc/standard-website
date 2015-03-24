@@ -25,14 +25,14 @@ This way listeners can handle the submission and send a mail, set a notice, etc.
             <argument>:Main:contact.html.twig</argument>
         </service>
 
-        <service id="kristofvc_contact.event.mail_contact_listener" class="Kristofvc\Contact\Event\MailContactListener">
+        <service id="kristofvc_contact.event.mail_contact_listener" class="Kristofvc\Contact\Event\Listener\MailContactListener">
             <argument type="service" id="mailer" />
             <argument>%mailer_from%</argument>
             <argument>%mailer_to%</argument>
             <tag name="kernel.event_listener" event="contact.contact_submitted_event" method="sendMail" />
         </service>
 
-        <service id="kristofvc_contact.event.success_notice_listener" class="Kristofvc\Contact\Event\SuccessNoticeListener" scope="request">
+        <service id="kristofvc_contact.event.success_notice_listener" class="Kristofvc\Contact\Event\Listener\SuccessNoticeListener" scope="request">
             <argument type="service" id="request" />
             <tag name="kernel.event_listener" event="contact.contact_submitted_event" method="sendSuccessNotice" />
         </service>

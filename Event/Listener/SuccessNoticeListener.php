@@ -1,12 +1,13 @@
 <?php
 
-namespace Kristofvc\Contact\Event;
+namespace Kristofvc\Contact\Event\Listener;
 
+use Kristofvc\Contact\Event\ContactEvent;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
  * Class SuccessNoticeListener
- * @package Kristofvc\Contact\Event
+ * @package Kristofvc\Contact\Event\Listener
  */
 final class SuccessNoticeListener
 {

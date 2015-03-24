@@ -1,10 +1,11 @@
 <?php
 
-namespace Kristofvc\Contact\Event;
+namespace Kristofvc\Contact\Event\Listener;
+use Kristofvc\Contact\Event\ContactEvent;
 
 /**
  * Class MailContactListener
- * @package Kristofvc\Contact\Event
+ * @package Kristofvc\Contact\Event\Listener
  */
 final class MailContactListener
 {
