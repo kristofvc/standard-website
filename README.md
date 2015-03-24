@@ -8,7 +8,7 @@ This way listeners can handle the submission and send a mail, set a notice, etc.
 ```
     "require": {
         ...
-        "kristofvc/contact": "1.0"
+        "kristofvc/contact": "~1.0"
     }
 ```
 
@@ -62,7 +62,7 @@ You can add other services in the Event-folder, or your own services the same wa
     
         $validatorBuilder = $this->getContainer()->get('validator.builder');
         $validatorBuilder->addXmlMappings([
-            __DIR__.'/../vendor/kristofvc/component/Contact/Resources/config/validators_contact.xml'
+            __DIR__.'/../vendor/kristofvc/contact/Resources/config/validators_contact.xml'
         ]);
     }
 ```
