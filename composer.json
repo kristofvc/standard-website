@@ -1,0 +1,24 @@
+{
+    "name": "kristofvc/contact",
+    "type": "component",
+    "description": "This is a component that defines a contact page",
+    "keywords": ["contact", "form"],
+    "homepage": "http://github.com/kristofvc/Contact",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Kristof Van Cauwenbergh",
+            "email": "kristof.vancauwenbergh@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.3",
+        "symfony/http-foundation": ">=2.3",
+        "symfony/form": ">=2.3",
+        "symfony/event-dispatcher": ">=2.3"
+    },
+    "autoload": {
+        "psr-4": { "Kristofvc\\": "vendor/kristofvc/contact/component/" }
+    },
+    "target-dir": "component/Kristofvc/Contact"
+}
