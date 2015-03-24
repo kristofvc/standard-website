@@ -2,7 +2,6 @@
 
 namespace Kristofvc\Contact\Event\Listener;
 
-use Kristofvc\Contact\Event\ContactEvent;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
