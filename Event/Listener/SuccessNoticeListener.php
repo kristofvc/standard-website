@@ -24,10 +24,7 @@ final class SuccessNoticeListener
         $this->request = $request;
     }
 
-    /**
-     * @param ContactEvent $event
-     */
-    public function sendSuccessNotice(ContactEvent $event)
+    public function sendSuccessNotice()
     {
         $this->request->getSession()->getFlashBag()->add('success-notice', 'Thank you for sending me a message!');
     }
