@@ -92,4 +92,4 @@ final class Contact implements ContactInterface
     {
         return 'Contact by ' . $this->getName();
     }
-} 
+}

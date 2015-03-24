@@ -37,8 +37,12 @@ final class SlackListener
      * @param string $channel
      * @param string $icon
      */
-    public function __construct(ClientInterface $client, $incomingWebhookUrl, $channel = '#general', $icon = ':envelope:')
-    {
+    public function __construct(
+        ClientInterface $client,
+        $incomingWebhookUrl,
+        $channel = '#general',
+        $icon = ':envelope:'
+    ) {
         $this->incomingWebhookUrl = $incomingWebhookUrl;
         $this->channel = $channel;
         $this->icon = $icon;

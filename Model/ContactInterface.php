@@ -23,4 +23,4 @@ interface ContactInterface
      * @return string
      */
     public function getSubject();
-} 
+}

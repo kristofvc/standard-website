@@ -50,8 +50,13 @@ final class Contact
      * @param ContactTypeInterface $contactType
      * @param $template
      */
-    public function __construct(EngineInterface $templating, FormFactoryInterface $formFactory, EventDispatcherInterface $eventDispatcher, ContactTypeInterface $contactType, $template)
-    {
+    public function __construct(
+        EngineInterface $templating,
+        FormFactoryInterface $formFactory,
+        EventDispatcherInterface $eventDispatcher,
+        ContactTypeInterface $contactType,
+        $template
+    ) {
         $this->templating = $templating;
         $this->formFactory = $formFactory;
         $this->eventDispatcher = $eventDispatcher;

@@ -20,7 +20,8 @@ class ContactEvent extends Event
      * @param ContactInterface $contact
      * @return ContactEvent
      */
-    public static function createWith(ContactInterface $contact) {
+    public static function createWith(ContactInterface $contact)
+    {
         return new ContactEvent($contact);
     }
 

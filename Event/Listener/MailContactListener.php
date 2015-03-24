@@ -1,6 +1,7 @@
 <?php
 
 namespace Kristofvc\Contact\Event\Listener;
+
 use Kristofvc\Contact\Event\ContactEvent;
 
 /**

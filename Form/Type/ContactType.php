@@ -27,12 +27,46 @@ class ContactType extends AbstractType implements ContactTypeInterface
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('name', 'text', ['required' => true, 'attr' => [ 'placeholder' => 'Name', 'tabindex' => 1 ]]);
-        $builder->add('email', 'email', ['required' => true, 'attr' => [ 'placeholder' => 'E-mail', 'tabindex' => 1 ]]);
+        $builder->add(
+            'name',
+            'text',
+            [
+                'required' => true,
+                'attr' => [
+                    'placeholder' => 'Name',
+                    'tabindex' => 1
+                ]
+            ]
+        );
+
+        $builder->add(
+            'email',
+            'email',
+            [
+                'required' => true,
+                'attr' => [
+                    'placeholder' => 'E-mail',
+                    'tabindex' => 1
+                ]
+            ]
+        );
+
         if ($this->hasRecaptcha) {
             $builder->add('recaptcha', 'ewz_recaptcha');
         }
-        $builder->add('message', 'textarea', ['required' => true, 'attr' => [ 'placeholder' => 'Message', 'tabindex' => 1, 'rows' => 7 ] ]);
+
+        $builder->add(
+            'message',
+            'textarea',
+            [
+                'required' => true,
+                'attr' => [
+                    'placeholder' => 'Message',
+                    'tabindex' => 1,
+                    'rows' => 7
+                ]
+            ]
+        );
     }
 
     /**
