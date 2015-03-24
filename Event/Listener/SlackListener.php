@@ -2,7 +2,8 @@
 
 namespace Kristofvc\Contact\Event\Listener;
 
-use Guzzle\Http\ClientInterface;
+use GuzzleHttp\ClientInterface;
+use GuzzleHttp\Stream\Stream;
 use Kristofvc\Contact\Event\ContactEvent;
 
 /**
@@ -63,7 +64,8 @@ final class SlackListener
             'icon_emoji' => $this->icon
         ];
 
-        $request = $this->client->createRequest('POST', $this->incomingWebhookUrl, [], json_encode($data));
-        $request->send();
+        $request = $this->client->createRequest('POST', $this->incomingWebhookUrl);
+        $request->setBody(Stream::factory(json_encode($data)));
+        $this->client->send($request);
     }
 }
