@@ -2,7 +2,7 @@
 
 namespace Kristofvc\Contact\Event\Listener;
 
-use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Session\Session;
 
 /**
  * Class SuccessNoticeListener
@@ -11,20 +11,23 @@ use Symfony\Component\HttpFoundation\Request;
 final class SuccessNoticeListener
 {
     /**
-     * @var Request
+     * @var Session
      */
-    private $request;
+    private $session;
 
     /**
-     * @param Request $request
+     * @param Session $session
      */
-    public function __construct(Request $request)
+    public function __construct(Session $session)
     {
-        $this->request = $request;
+        $this->session = $session;
     }
 
+    /**
+     * Add a notice the message was successfully send
+     */
     public function sendSuccessNotice()
     {
-        $this->request->getSession()->getFlashBag()->add('success-notice', 'Thank you for sending me a message!');
+        $this->session->getFlashBag()->add('success-notice', 'Thank you for sending me a message!');
     }
 }
