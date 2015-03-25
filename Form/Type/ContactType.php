@@ -14,12 +14,17 @@ class ContactType extends AbstractType implements ContactTypeInterface
     private $hasRecaptcha = false;
 
     /**
+     * @var string
+     */
+    private $dataClass;
+
+    /**
      * @param $hasRecaptcha
      */
-    public function __construct($hasRecaptcha)
+    public function __construct($hasRecaptcha, $dataClass = 'Kristofvc\Contact\Model\Contact')
     {
-
         $this->hasRecaptcha = $hasRecaptcha;
+        $this->dataClass = $dataClass;
     }
 
     /**
@@ -74,9 +79,9 @@ class ContactType extends AbstractType implements ContactTypeInterface
      */
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
-        $resolver->setDefaults(array(
-            'data_class' => 'Kristofvc\Contact\Model\Contact',
-        ));
+        $resolver->setDefaults([
+            'data_class' => $this->dataClass,
+        ]);
     }
 
     /**
