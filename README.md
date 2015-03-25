@@ -33,7 +33,7 @@ This way listeners can handle the submission and send a mail, set a notice, etc.
         </service>
 
         <service id="kristofvc_contact.event.success_notice_listener" class="Kristofvc\Contact\Event\Listener\SuccessNoticeListener" scope="request">
-            <argument type="service" id="request" />
+            <argument type="service" id="session" />
             <tag name="kernel.event_listener" event="contact.contact_submitted_event" method="sendSuccessNotice" />
         </service>
 
