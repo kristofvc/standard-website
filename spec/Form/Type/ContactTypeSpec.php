@@ -17,6 +17,7 @@ class ContactTypeSpec extends ObjectBehavior
     function it_is_initializable()
     {
         $this->shouldHaveType('Kristofvc\Contact\Form\Type\ContactType');
+        $this->shouldHaveType('Kristofvc\Contact\Form\Type\ContactTypeInterface');
     }
 
     function let()
