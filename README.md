@@ -38,7 +38,7 @@ This way listeners can handle the submission and send a mail, set a notice, etc.
         </service>
 
         <service id="kristofvc_contact.form.type.contact" class="Kristofvc\Contact\Form\Type\ContactType">
-            <argument>true</argument>
+            <argument>false</argument>
         </service>
 ```
 
@@ -89,7 +89,7 @@ You can add other services in the Event-folder, or your own services the same wa
                 <div class="col-sm-6">
                     {{ form_row(form.name) }}
                     {{ form_row(form.email) }}
-                    {{ form_row(form.recaptcha) }}
+                    {% if (form.recaptcha is defined) %}{{ form_row(form.recaptcha) }}{% endif %}
                 </div>
                 <div class="col-sm-6">
                     {{ form_row(form.message) }}
