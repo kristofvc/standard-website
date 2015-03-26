@@ -19,7 +19,8 @@
         "symfony/templating": ">=2.3"
     },
     "require-dev": {
-        "squizlabs/php_codesniffer": "2.*"
+        "squizlabs/php_codesniffer": "~2.3",
+        "phpspec/phpspec": "~2.1"
     },
     "suggest": {
         "guzzlehttp/guzzle": "If you want to integrate with slack you could use guzzle to send your data to slack",
@@ -27,6 +28,11 @@
         "symfony/validator": "Install the symfony validation component if you want validation of your contact model class"
     },
     "autoload": {
-        "psr-4": { "Kristofvc\\Contact\\": "" }
+        "psr-4": {
+            "Kristofvc\\Contact\\": [ "src/", "specs/" ]
+        }
+    },
+    "config": {
+      "bin-dir": "bin"
     }
 }

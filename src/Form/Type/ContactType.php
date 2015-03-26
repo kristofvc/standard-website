@@ -23,13 +23,20 @@ class ContactType extends AbstractType implements ContactTypeInterface
     private $dataClass;
 
     /**
+     * @var string
+     */
+    private $name;
+
+    /**
      * @param $hasRecaptcha
      * @param string $dataClass
+     * @param string $name
      */
-    public function __construct($hasRecaptcha, $dataClass = 'Kristofvc\Contact\Model\Contact')
+    public function __construct($hasRecaptcha, $dataClass = 'Kristofvc\Contact\Model\Contact', $name = 'contact_type')
     {
         $this->hasRecaptcha = $hasRecaptcha;
         $this->dataClass = $dataClass;
+        $this->name = $name;
     }
 
     /**
@@ -94,6 +101,6 @@ class ContactType extends AbstractType implements ContactTypeInterface
      */
     public function getName()
     {
-        return 'contact_type';
+        return $this->name;
     }
 }
