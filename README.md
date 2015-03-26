@@ -53,7 +53,7 @@ You can add other services in the Event-folder, or your own services the same wa
         methods: ["GET", "POST"]
 ```
 
-### Activate the validation the app/confing/AppKernel.php
+### Activate the validation the app/config/AppKernel.php
 
 ```php
     public function boot()
