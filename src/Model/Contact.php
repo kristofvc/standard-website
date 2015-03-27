@@ -18,6 +18,9 @@ final class Contact implements ContactInterface
      */
     private $email;
 
+    /**
+     * @var string
+     */
     private $recaptcha;
 
     /**
@@ -74,7 +77,7 @@ final class Contact implements ContactInterface
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getRecaptcha()
     {
@@ -82,7 +85,7 @@ final class Contact implements ContactInterface
     }
 
     /**
-     * @param mixed $recaptcha
+     * @param string $recaptcha
      */
     public function setRecaptcha($recaptcha)
     {
