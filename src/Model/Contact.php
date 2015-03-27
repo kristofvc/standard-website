@@ -29,6 +29,16 @@ final class Contact implements ContactInterface
     private $message;
 
     /**
+     * @var \DateTime
+     */
+    private $createdAt;
+
+    public function __construct()
+    {
+        $this->createdAt = new \DateTime();
+    }
+
+    /**
      * @return string
      */
     public function getEmail()
@@ -98,5 +108,13 @@ final class Contact implements ContactInterface
     public function getSubject()
     {
         return 'Contact by ' . $this->getName();
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getCreatedAt()
+    {
+        return $this->createdAt;
     }
 }

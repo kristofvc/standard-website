@@ -17,7 +17,11 @@ class ContactSpec extends ObjectBehavior
     function it_is_initializable()
     {
         $this->shouldHaveType('Kristofvc\Contact\Model\Contact');
-        $this->shouldHaveType('Kristofvc\Contact\Model\ContactInterface');
+    }
+
+    function it_should_implement_contact_interface()
+    {
+        $this->shouldImplement('Kristofvc\Contact\Model\ContactInterface');
     }
 
     function it_can_fetch_the_email()
@@ -38,12 +42,14 @@ class ContactSpec extends ObjectBehavior
         $this->getName()->shouldReturn('name');
     }
 
-    /**
-     * @return string
-     */
     public function it_can_fetch_the_subject()
     {
         $this->setName('name');
         $this->getSubject()->shouldReturn('Contact by name');
+    }
+
+    public function it_has_a_created_at_date()
+    {
+        $this->getCreatedAt()->shouldHaveType('\DateTime');
     }
 }
