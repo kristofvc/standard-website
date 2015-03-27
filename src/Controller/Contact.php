@@ -74,13 +74,14 @@ final class Contact
         $form->setAction($request->getBasePath());
         $form = $form->getForm();
 
-        $form->handleRequest($request);
+        if ('POST' === $request->getMethod()) {
+            $form->handleRequest($request);
+            if ($form->isValid()) {
+                $event = ContactEvent::createWith($form->getData());
+                $this->eventDispatcher->dispatch(ContactEvents::CONTACT_SUBMITTED_EVENT, $event);
 
-        if ($form->isValid()) {
-            $event = ContactEvent::createWith($form->getData());
-            $this->eventDispatcher->dispatch(ContactEvents::CONTACT_SUBMITTED_EVENT, $event);
-
-            $form = $this->formFactory->create($this->contactType);
+                $form = $this->formFactory->create($this->contactType);
+            }
         }
 
         return new Response(
