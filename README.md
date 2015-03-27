@@ -89,7 +89,9 @@ You can add other services in the Event-folder, or your own services the same wa
                 <div class="col-sm-6">
                     {{ form_row(form.name) }}
                     {{ form_row(form.email) }}
-                    {% if (form.recaptcha is defined) %}{{ form_row(form.recaptcha) }}{% endif %}
+                    {% if form.recaptcha is defined %}
+                        {{ form_row(form.recaptcha) }}
+                    {% endif %}
                 </div>
                 <div class="col-sm-6">
                     {{ form_row(form.message) }}
