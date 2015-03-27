@@ -24,31 +24,46 @@ class ContactSpec extends ObjectBehavior
         $this->shouldImplement('Kristofvc\Contact\Model\ContactInterface');
     }
 
-    function it_can_fetch_the_email()
+    function it_has_no_name_by_default()
     {
-        $this->setEmail('email');
-        $this->getEmail()->shouldReturn('email');
-    }
-
-    function it_can_fetch_the_message()
-    {
-        $this->setMessage('message');
-        $this->getMessage()->shouldReturn('message');
+        $this->getName()->shouldReturn(null);
     }
 
     function it_can_fetch_the_name()
     {
-        $this->setName('name');
-        $this->getName()->shouldReturn('name');
+        $this->setName('Kristof');
+        $this->getName()->shouldReturn('Kristof');
+    }
+
+    function it_has_no_email_by_default()
+    {
+        $this->getEmail()->shouldReturn(null);
+    }
+
+    function it_can_fetch_the_email()
+    {
+        $this->setEmail('kristof@kristofvc.be');
+        $this->getEmail()->shouldReturn('kristof@kristofvc.be');
+    }
+
+    function it_has_no_message_by_default()
+    {
+        $this->getMessage()->shouldReturn(null);
+    }
+
+    function it_can_fetch_the_message()
+    {
+        $this->setMessage('Cool website bro!');
+        $this->getMessage()->shouldReturn('Cool website bro!');
     }
 
     public function it_can_fetch_the_subject()
     {
-        $this->setName('name');
-        $this->getSubject()->shouldReturn('Contact by name');
+        $this->setName('Kristof');
+        $this->getSubject()->shouldReturn('Contact by Kristof');
     }
 
-    public function it_has_a_created_at_date()
+    public function it_initializes_created_at_by_default()
     {
         $this->getCreatedAt()->shouldHaveType('\DateTime');
     }
