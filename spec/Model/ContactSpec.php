@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of the kristofvc/contact component.
+ *
+ * (c) Kristof Van Cauwenbergh
+ *
+ * For the full copyright and license information, please view the meta/LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace spec\Kristofvc\Contact\Model;
 
 use Kristofvc\Contact\Model\Contact;
@@ -9,6 +18,8 @@ use Prophecy\Argument;
 /**
  * Class ContactSpec
  * @package spec\Kristofvc\Contact\Model
+ *
+ * @author Kristof Van Cauwenbergh <kristof.vancauwenbergh@gmail.com>
  *
  * @mixin Contact
  */

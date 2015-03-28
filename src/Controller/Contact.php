@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of the kristofvc/contact component.
+ *
+ * (c) Kristof Van Cauwenbergh
+ *
+ * For the full copyright and license information, please view the meta/LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Kristofvc\Contact\Controller;
 
 use Kristofvc\Contact\Event\ContactEvent;
@@ -15,6 +24,8 @@ use Symfony\Component\Templating\EngineInterface;
 /**
  * Class Contact
  * @package Kristofvc\Contact\Controller\Main
+ *
+ * @author Kristof Van Cauwenbergh <kristof.vancauwenbergh@gmail.com>
  */
 final class Contact
 {
