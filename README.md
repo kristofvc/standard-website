@@ -1,7 +1,9 @@
-# Contact component
+# Contact
 
 This is a component that includes a controller to render a contact-form and then throws an event when the contact-form is submitted.
 This way listeners can handle the submission and send a mail, set a notice, etc...
+
+Since the controller throws an event when the form is submitted and valid it's easy to add your own listeners. 
 
 ## Installing the component with composer
 
@@ -12,94 +14,28 @@ This way listeners can handle the submission and send a mail, set a notice, etc.
     }
 ```
 
-## How to use the component with Symfony 2
+## About
 
-### Add some services
+### Documentation
 
-```xml
-        <service id="kristofvc_contact.controller.contact" class="Kristofvc\Contact\Controller\Contact">
-            <argument type="service" id="templating" />
-            <argument type="service" id="form.factory" />
-            <argument type="service" id="event_dispatcher" />
-            <argument type="service" id="kristofvc_contact.form.type.contact" />
-            <argument>:Main:contact.html.twig</argument>
-        </service>
+The documentation is stored in the `doc/index.md` file in this bundle:
 
-        <service id="kristofvc_contact.event.mail_contact_listener" class="Kristofvc\Contact\Event\Listener\MailContactListener">
-            <argument type="service" id="mailer" />
-            <argument>%mailer_from%</argument>
-            <argument>%mailer_to%</argument>
-            <tag name="kernel.event_listener" event="contact.contact_submitted_event" method="sendMail" />
-        </service>
+[Read the Documentation for master](https://github.com/kristofvc/contact/blob/master/doc/index.md)
 
-        <service id="kristofvc_contact.event.success_notice_listener" class="Kristofvc\Contact\Event\Listener\SuccessNoticeListener" scope="request">
-            <argument type="service" id="session" />
-            <tag name="kernel.event_listener" event="contact.contact_submitted_event" method="sendSuccessNotice" />
-        </service>
+### Author
 
-        <service id="kristofvc_contact.form.type.contact" class="Kristofvc\Contact\Form\Type\ContactType">
-            <argument>false</argument>
-        </service>
-```
+Kristof Van Cauwenbergh - <kristof.vancauwenbergh@gmail.com> - <http://kristofvc.be>
+See also the list of [contributors](https://github.com/kristofvc/contact/contributors) that participated in this project.
 
-You can add other services in the Event-folder, or your own services the same way.
+### License
 
-### Add a route
+kristofvc/contact is licensed under the MIT License - see the `meta/LICENSE` file for details
 
-```yml
-    kristofvc_controller_main_contact:
-        path: /contact
-        defaults: { _controller: kristofvc_contact.controller.contact:__invoke }
-        methods: ["GET", "POST"]
-```
+### Contributing
 
-### Activate the validation in app/config/AppKernel.php
+Issues and feature requests are tracked in the [Github issue tracker](https://github.com/kristofvc/contact/issues).
 
-```php
-    public function boot()
-    {
-        parent::boot();
-    
-        $validatorBuilder = $this->getContainer()->get('validator.builder');
-        $validatorBuilder->addXmlMappings([
-            __DIR__.'/../vendor/kristofvc/contact/src/Resources/config/Contact.validation.xml'
-        ]);
-    }
-```
+When reporting a bug, it may be a good idea to reproduce it in a basic project,
+to allow developers of the component to reproduce the issue by simply cloning the basic project.
 
-### Add a template under app/Resources/views/Main/contact.html.twig
-
-```twig
-    {% extends "::base.html.twig" %}
-    
-    {% block body %}
-        <div class="container">
-            <div class="row marketing">
-                <div class="col-sm-11 col-sm-offset-1">
-                    <h2 class="pull-left marketing-title">Get in touch</h2>
-                    <div class="clearfix"></div>
-                    {% if app.request.session.flashBag.has('success-notice')|length > 0 %}
-                        <p class="pull-left marketing-byline-success marketing-byline">{% for message in app.request.session.flashBag.get('success-notice') %}{{ message }}{% endfor %}</p>
-                    {% else %}
-                        <p class="pull-left marketing-byline">Fill out the form below!</p>
-                    {% endif %}
-                </div>
-            </div>
-            {{ form_start(form) }}
-                <div class="col-sm-6">
-                    {{ form_row(form.name) }}
-                    {{ form_row(form.email) }}
-                    {% if form.recaptcha is defined %}
-                        {{ form_row(form.recaptcha) }}
-                    {% endif %}
-                </div>
-                <div class="col-sm-6">
-                    {{ form_row(form.message) }}
-                    <div class="form-group">
-                        <button class="btn btn-primary pull-right" type="submit">Send <i class="fa fa-arrow-right"></i></button>
-                    </div>
-                </div>
-            {{ form_end(form) }}
-        </div>
-    {% endblock body %}
-```
+Feel free to fork this project, to contribute and to send pull requests.
