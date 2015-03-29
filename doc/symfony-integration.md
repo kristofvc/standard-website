@@ -18,8 +18,11 @@
             <tag name="kernel.event_listener" event="contact.contact_submitted_event" method="sendMail" />
         </service>
 
-        <service id="kristofvc_contact.event.success_notice_listener" class="Kristofvc\Contact\Event\Listener\SuccessNoticeListener" scope="request">
+        <service id="kristofvc_contact.provider.simple_message" class="Kristofvc\Contact\Provider\SimpleMessageProvider" />
+
+        <service id="kristofvc_contact.event.success_notice_listener" class="Kristofvc\Contact\Event\Listener\SuccessNoticeListener">
             <argument type="service" id="session" />
+            <argument type="service" id="kristofvc_contact.provider.simple_message" />
             <tag name="kernel.event_listener" event="contact.contact_submitted_event" method="sendSuccessNotice" />
         </service>
 

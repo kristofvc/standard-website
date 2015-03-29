@@ -11,6 +11,8 @@
 
 namespace Kristofvc\Contact\Event\Listener;
 
+use Kristofvc\Contact\Event\ContactEvent;
+use Kristofvc\Contact\Provider\MessageProviderInterface;
 use Symfony\Component\HttpFoundation\Session\Session;
 
 /**
@@ -27,18 +29,27 @@ final class SuccessNoticeListener
     private $session;
 
     /**
+     * @var MessageProviderInterface
+     */
+    private $messageProvider;
+
+    /**
      * @param Session $session
      */
-    public function __construct(Session $session)
+    public function __construct(Session $session, MessageProviderInterface $messageProvider)
     {
         $this->session = $session;
+        $this->messageProvider = $messageProvider;
     }
 
     /**
      * Add a notice the message was successfully send
      */
-    public function sendSuccessNotice()
+    public function sendSuccessNotice(ContactEvent $contact)
     {
-        $this->session->getFlashBag()->add('success-notice', 'Thank you for sending me a message!');
+        $this->session->getFlashBag()->add(
+            'success-notice',
+            $this->messageProvider->getMessage($contact->getContact())
+        );
     }
 }
