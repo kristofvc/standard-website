@@ -1,4 +1,4 @@
-# Contact [![Build Status](https://magnum.travis-ci.com/kristofvc/contact.svg?token=jqzJ2zVx8Q9Rxr3NyxeV&branch=1.0.7)](https://magnum.travis-ci.com/kristofvc/contact)
+# Contact [![Build Status](https://travis-ci.org/kristofvc/contact.svg)](https://travis-ci.org/kristofvc/contact)
 
 This is a component that includes a controller to render a contact-form and then throws an event when the contact-form is submitted.
 This way listeners can handle the submission and send a mail, set a notice, etc...
