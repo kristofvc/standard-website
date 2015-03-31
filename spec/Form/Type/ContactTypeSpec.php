@@ -14,6 +14,8 @@ namespace spec\Kristofvc\Contact\Form\Type;
 use Kristofvc\Contact\Form\Type\ContactType;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
+use Symfony\Component\Form\FormBuilder;
+use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
 /**
  * Class ContactTypeSpec
@@ -40,7 +42,29 @@ class ContactTypeSpec extends ObjectBehavior
 
     function let()
     {
-        $this->beConstructedWith(true, 'Kristofvc\Contact\Model\Contact');
+        $this->beConstructedWith(false, 'Kristofvc\Contact\Model\Contact');
+    }
+
+    function it_should_build_form_with_chosen_fields(FormBuilder $builder)
+    {
+        $builder->add('name', 'text', Argument::any())->willReturn($builder);
+        $builder->add('email', 'email', Argument::any())->willReturn($builder);
+        $builder->add('message', 'textarea', Argument::any())->willReturn($builder);
+
+        $this->buildForm($builder, array());
+    }
+
+    function it_should_use_injected_data_class(OptionsResolverInterface $resolver)
+    {
+        $resolver
+            ->setDefaults(
+                [
+                    'data_class' => 'Kristofvc\Contact\Model\Contact'
+                ]
+            )
+            ->shouldBeCalled();
+
+        $this->setDefaultOptions($resolver);
     }
 
     function it_can_fetch_the_name()
