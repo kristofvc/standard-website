@@ -21,7 +21,7 @@ use Symfony\Component\OptionsResolver\OptionsResolverInterface;
  *
  * @author Kristof Van Cauwenbergh <kristof.vancauwenbergh@gmail.com>
  */
-class ContactType extends AbstractType implements ContactTypeInterface
+final class ContactType extends AbstractType implements ContactTypeInterface
 {
     /**
      * @var bool
@@ -43,7 +43,7 @@ class ContactType extends AbstractType implements ContactTypeInterface
      * @param string $dataClass
      * @param string $name
      */
-    public function __construct($hasRecaptcha, $dataClass = 'Kristofvc\Contact\Model\Contact', $name = 'contact_type')
+    public function __construct($hasRecaptcha = false, $dataClass = 'Kristofvc\Contact\Model\Contact', $name = 'contact_type')
     {
         $this->hasRecaptcha = $hasRecaptcha;
         $this->dataClass = $dataClass;
