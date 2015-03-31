@@ -11,6 +11,7 @@
 
 namespace spec\Kristofvc\Contact\Provider;
 
+use Kristofvc\Contact\Model\Contact;
 use Kristofvc\Contact\Provider\TranslatableMessageProvider;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
@@ -33,11 +34,31 @@ class TranslatableMessageProviderSpec extends ObjectBehavior
 
     function let(Translator $translator)
     {
-        $this->beConstructedWith($translator);
+        $this->beConstructedWith($translator, 'message.token', 'custom_catalogue');
     }
 
     function it_should_implement_message_provider_interface()
     {
         $this->shouldImplement('Kristofvc\Contact\Provider\MessageProviderInterface');
+    }
+
+    function it_should_call_trans_with_the_right_values(Translator $translator)
+    {
+        $contact = new Contact();
+        $contact->setName('Kristof');
+        $contact->setEmail('kristof@kristofvc.be');
+        $contact->setMessage('Awesome website bro!');
+
+        $translator->trans(
+            'message.token',
+            [
+                '{{ name }}' => $contact->getName(),
+                '{{ email }}' => $contact->getEmail(),
+                '{{ message }}' => $contact->getMessage()
+            ],
+            'custom_catalogue'
+        )->shouldBeCalled();
+
+        $this->getMessage($contact);
     }
 }

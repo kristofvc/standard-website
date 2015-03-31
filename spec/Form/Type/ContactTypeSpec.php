@@ -51,7 +51,7 @@ class ContactTypeSpec extends ObjectBehavior
         $builder->add('email', 'email', Argument::any())->willReturn($builder);
         $builder->add('message', 'textarea', Argument::any())->willReturn($builder);
 
-        $this->buildForm($builder, array());
+        $this->buildForm($builder, []);
     }
 
     function it_should_use_injected_data_class(OptionsResolverInterface $resolver)
