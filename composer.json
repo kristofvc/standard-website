@@ -21,7 +21,8 @@
     "require-dev": {
         "squizlabs/php_codesniffer": "~2.3",
         "phpspec/phpspec": "~2.1",
-        "symfony/translation": ">=2.3"
+        "symfony/translation": ">=2.3",
+        "doctrine/common": ">=2.3"
     },
     "suggest": {
         "guzzlehttp/guzzle": "If you want to integrate with slack you could use guzzle to send your data to slack",
