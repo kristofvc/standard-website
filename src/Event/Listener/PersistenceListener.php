@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Kristofvc\Contact\Event\Listener\ORM;
+namespace Kristofvc\Contact\Event\Listener;
 
-use Doctrine\ORM\EntityManagerInterface;
+use Doctrine\Common\Persistence\ObjectManager;
 use Kristofvc\Contact\Event\ContactEvent;
 
 /**
@@ -19,33 +19,33 @@ use Kristofvc\Contact\Event\ContactEvent;
  * @package Kristofvc\Contact\Event\Listener
  *
  * @author Hans Stevens <hnsstvns@gmail.com>
+ * @author Kristof Van Cauwenbergh <kristof.vancauwenbergh@gmail.com>
  */
 final class PersistenceListener
 {
     /**
-     * @var EntityManagerInterface
+     * @var ObjectManager
      */
-    private $entityManager;
+    private $manager;
 
     /**
-     * @param EntityManagerInterface $entityManager
+     * @param ObjectManager $manager
      */
-    public function __construct(
-        EntityManagerInterface $entityManager
-    ) {
-        $this->entityManager = $entityManager;
+    public function __construct(ObjectManager $manager)
+    {
+        $this->manager = $manager;
     }
 
     /**
-     * Send a message to slack with the data that was submitted in the contact form
+     * Save a message in a database
      *
      * @param ContactEvent $event
      */
-    public function persist(ContactEvent $event)
+    public function save(ContactEvent $event)
     {
         $contact = $event->getContact();
 
-        $this->entityManager->persist($contact);
-        $this->entityManager->flush();
+        $this->manager->persist($contact);
+        $this->manager->flush();
     }
 }
