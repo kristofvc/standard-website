@@ -19,5 +19,4 @@ namespace Kristofvc\Contact\Model;
  */
 final class Contact extends AbstractContact
 {
-
 }
