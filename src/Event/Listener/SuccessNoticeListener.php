@@ -47,7 +47,8 @@ final class SuccessNoticeListener
      */
     public function sendSuccessNotice(ContactEvent $contact)
     {
-        $this->session->getFlashBag()->add(
+        $flashBag = $this->session->getFlashBag();
+        $flashBag->add(
             'success-notice',
             $this->messageProvider->getMessage($contact->getContact())
         );
