@@ -13,6 +13,7 @@ namespace Kristofvc\Contact\Event\Listener;
 
 use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Stream\Stream;
+use GuzzleHttp\Stream\StreamInterface;
 use Kristofvc\Contact\Event\ContactEvent;
 
 /**
@@ -44,13 +45,20 @@ final class SlackListener
     private $client;
 
     /**
+     * @var StreamInterface
+     */
+    private $stream;
+
+    /**
      * @param ClientInterface $client
+     * @param StreamInterface $stream
      * @param $incomingWebhookUrl
      * @param string $channel
      * @param string $icon
      */
     public function __construct(
         ClientInterface $client,
+        StreamInterface $stream,
         $incomingWebhookUrl,
         $channel = '#general',
         $icon = ':envelope:'
@@ -59,6 +67,7 @@ final class SlackListener
         $this->channel = $channel;
         $this->icon = $icon;
         $this->client = $client;
+        $this->stream = $stream;
     }
 
     /**
@@ -76,9 +85,10 @@ final class SlackListener
             'username' => $contact->getName() . ' (' . $contact->getEmail() . ')',
             'icon_emoji' => $this->icon
         ];
+        $this->stream->write(json_encode($data));
 
         $request = $this->client->createRequest('POST', $this->incomingWebhookUrl);
-        $request->setBody(Stream::factory(json_encode($data)));
+        $request->setBody($this->stream);
         $this->client->send($request);
     }
 }
