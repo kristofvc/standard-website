@@ -14,12 +14,12 @@ namespace Kristofvc\Contact\Event\Listener;
 use Kristofvc\Contact\Event\ContactEvent;
 
 /**
- * Class MailContactListener
+ * Class MailListener
  * @package Kristofvc\Contact\Event\Listener
  *
  * @author Kristof Van Cauwenbergh <kristof.vancauwenbergh@gmail.com>
  */
-final class MailContactListener
+final class MailListener
 {
     /**
      * @var \Swift_Mailer

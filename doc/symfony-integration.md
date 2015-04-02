@@ -11,7 +11,7 @@
             <argument>:Main:contact.html.twig</argument>
         </service>
 
-        <service id="kristofvc_contact.event.mail_contact_listener" class="Kristofvc\Contact\Event\Listener\MailContactListener">
+        <service id="kristofvc_contact.event.mail_listener" class="Kristofvc\Contact\Event\Listener\MailListener">
             <argument type="service" id="mailer" />
             <argument>%mailer_from%</argument>
             <argument>%mailer_to%</argument>
