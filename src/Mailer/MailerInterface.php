@@ -21,14 +21,14 @@ use Kristofvc\Contact\Model\ContactInterface;
  */
 interface MailerInterface
 {
-   /**
+    /**
      * @param $message
      */
     public function send($message);
 
     /**
      * @param ContactInterface $contact
-     * 
+     *
      * @return mixed
      */
     public function createMessage(ContactInterface $contact);
