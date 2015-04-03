@@ -24,12 +24,12 @@ The documentation is stored in the `doc/index.md` file in this bundle:
 
 ### Author
 
-Kristof Van Cauwenbergh - <kristof.vancauwenbergh@gmail.com> - <http://kristofvc.be>
+Kristof Van Cauwenbergh - <kristof.vancauwenbergh@gmail.com> - <http://kristofvc.be>.
 See also the list of [contributors](https://github.com/kristofvc/contact/contributors) that participated in this project.
 
 ### License
 
-kristofvc/contact is licensed under the MIT License - see the `meta/LICENSE` file for details
+kristofvc/contact is licensed under the MIT License - see the `meta/LICENSE` file for details.
 
 ### Contributing
 
