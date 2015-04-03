@@ -11,13 +11,9 @@
 
 namespace spec\Kristofvc\Contact\Event\Listener;
 
-use Doctrine\Common\Persistence\ObjectManager;
-use GuzzleHttp\ClientInterface;
-use GuzzleHttp\Message\RequestInterface;
-use GuzzleHttp\Stream\Stream;
-use GuzzleHttp\Stream\StreamInterface;
 use Kristofvc\Contact\Event\ContactEvent;
 use Kristofvc\Contact\Event\Listener\SlackListener;
+use Kristofvc\Contact\Http\ClientInterface;
 use Kristofvc\Contact\Model\Contact;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
@@ -37,12 +33,12 @@ class SlackListenerSpec extends ObjectBehavior
         $this->shouldHaveType('Kristofvc\Contact\Event\Listener\SlackListener');
     }
 
-    function let(ClientInterface $client, StreamInterface $stream)
+    function let(ClientInterface $client)
     {
-        $this->beConstructedWith($client, $stream, 'http://incoming-webhook-url');
+        $this->beConstructedWith($client, 'http://incoming-webhook-url');
     }
 
-    function it_should_set_a_message_to_slack(ClientInterface $client, StreamInterface $stream, RequestInterface $request)
+    function it_should_set_a_message_to_slack(ClientInterface $client)
     {
         $contact = new Contact();
         $contact->setName('Kristof');
@@ -56,10 +52,8 @@ class SlackListenerSpec extends ObjectBehavior
             'icon_emoji' => ':envelope:'
         ];
 
-        $stream->write(json_encode($data))->shouldBeCalled();
-        $client->createRequest('POST', 'http://incoming-webhook-url')->shouldBeCalled()->willReturn($request);
-        $request->setBody($stream)->shouldBeCalled();
-        $client->send($request)->shouldBeCalled();
+        $client->createPostRequest('http://incoming-webhook-url', $data)->shouldBeCalled()->willReturn('request');
+        $client->send('request')->shouldBeCalled();
 
         $contactEvent = ContactEvent::createWith($contact);
         $this->pushMessage($contactEvent);
