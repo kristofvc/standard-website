@@ -39,7 +39,8 @@ class SwiftMailerSpec extends ObjectBehavior
         $this->beConstructedWith($mailer, 'no-reply@kristofvc.be', 'info@kristofvc.be');
     }
 
-    function it_should_create_a_message() {
+    function it_should_create_a_message()
+    {
         $contact = new Contact();
         $contact->setName('Kristof');
         $contact->setEmail('kristof@kristofvc.be');

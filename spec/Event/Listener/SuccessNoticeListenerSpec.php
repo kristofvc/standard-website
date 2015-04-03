@@ -42,8 +42,11 @@ class SuccessNoticeListenerSpec extends ObjectBehavior
         $this->beConstructedWith($session, $messageProvider);
     }
 
-    function it_should_set_a_flash(Session $session, MessageProviderInterface $messageProvider, FlashBagInterface $flashBag)
-    {
+    function it_should_set_a_flash(
+        Session $session,
+        MessageProviderInterface $messageProvider,
+        FlashBagInterface $flashBag
+    ) {
         $contact = new Contact();
         $contact->setName('Kristof');
         $contact->setEmail('kristof@kristofvc.be');
