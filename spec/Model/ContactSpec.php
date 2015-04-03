@@ -68,13 +68,13 @@ class ContactSpec extends ObjectBehavior
         $this->getMessage()->shouldReturn('Cool website bro!');
     }
 
-    public function it_can_fetch_the_subject()
+    function it_can_fetch_the_subject()
     {
         $this->setName('Kristof');
         $this->getSubject()->shouldReturn('Contact by Kristof');
     }
 
-    public function it_initializes_created_at_by_default()
+    function it_initializes_created_at_by_default()
     {
         $this->getCreatedAt()->shouldHaveType('\DateTime');
     }
