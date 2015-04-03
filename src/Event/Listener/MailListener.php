@@ -12,6 +12,7 @@
 namespace Kristofvc\Contact\Event\Listener;
 
 use Kristofvc\Contact\Event\ContactEvent;
+use Kristofvc\Contact\Mailer\MailerInterface;
 
 /**
  * Class MailListener
@@ -22,30 +23,16 @@ use Kristofvc\Contact\Event\ContactEvent;
 final class MailListener
 {
     /**
-     * @var \Swift_Mailer
+     * @var MailerInterface
      */
     private $mailer;
 
     /**
-     * @var string
+     * @param MailerInterface $mailer
      */
-    private $from;
-
-    /**
-     * @var string
-     */
-    private $to;
-
-    /**
-     * @param \Swift_Mailer $mailer
-     * @param $from
-     * @param $to
-     */
-    public function __construct(\Swift_Mailer $mailer, $from, $to)
+    public function __construct(MailerInterface $mailer)
     {
         $this->mailer = $mailer;
-        $this->from = $from;
-        $this->to = $to;
     }
 
     /**
@@ -57,13 +44,7 @@ final class MailListener
     {
         $contact = $event->getContact();
 
-        $message = \Swift_Message::newInstance()
-            ->setSubject($contact->getSubject())
-            ->setFrom($this->from)
-            ->setTo($this->to)
-            ->setReplyTo($contact->getEmail())
-            ->setBody($contact->getMessage());
-
+        $message = $this->mailer->createMessage($contact);
         $this->mailer->send($message);
     }
 }

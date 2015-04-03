@@ -11,10 +11,14 @@
             <argument>:Main:contact.html.twig</argument>
         </service>
 
-        <service id="kristofvc_contact.event.mail_listener" class="Kristofvc\Contact\Event\Listener\MailListener">
+        <service id="kristofvc_contact.mailer.swift" class="Kristofvc\Contact\Mailer\SwiftMailer">
             <argument type="service" id="mailer" />
             <argument>%mailer_from%</argument>
             <argument>%mailer_to%</argument>
+        </service>
+
+        <service id="kristofvc_contact.event.mail_listener" class="Kristofvc\Contact\Event\Listener\MailListener">
+            <argument type="service" id="kristofvc_contact.mailer.swift" />
             <tag name="kernel.event_listener" event="contact.contact_submitted_event" method="sendMail" />
         </service>
 

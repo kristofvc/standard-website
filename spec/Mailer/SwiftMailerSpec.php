@@ -9,47 +9,49 @@
  * file that was distributed with this source code.
  */
 
-namespace spec\Kristofvc\Contact\Event\Listener;
+namespace spec\Kristofvc\Contact\Mailer;
 
 use Doctrine\Common\Persistence\ObjectManager;
 use Kristofvc\Contact\Event\ContactEvent;
 use Kristofvc\Contact\Mailer\MailerInterface;
-use Kristofvc\Contact\Event\Listener\MailListener;
+use Kristofvc\Contact\Mailer\SwiftMailer;
 use Kristofvc\Contact\Model\Contact;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 
 /**
- * Class MailListenerSpec
+ * Class SwiftMailerSpec
  * @package spec\Kristofvc\Contact\Event\Listener
  *
  * @author Kristof Van Cauwenbergh <kristof.vancauwenbergh@gmail.com>
  *
- * @mixin MailListener
+ * @mixin SwiftMailer
  */
-class MailListenerSpec extends ObjectBehavior
+class SwiftMailerSpec extends ObjectBehavior
 {
     function it_is_initializable()
     {
-        $this->shouldHaveType('Kristofvc\Contact\Event\Listener\MailListener');
+        $this->shouldHaveType('Kristofvc\Contact\Mailer\SwiftMailer');
     }
 
-    function let(MailerInterface $mailer)
+    function let(\Swift_Mailer $mailer)
     {
-        $this->beConstructedWith($mailer);
+        $this->beConstructedWith($mailer, 'no-reply@kristofvc.be', 'info@kristofvc.be');
     }
 
-    function it_should_save_the_object(MailerInterface $mailer, \Swift_Message $message)
-    {
+    function it_should_create_a_message() {
         $contact = new Contact();
         $contact->setName('Kristof');
         $contact->setEmail('kristof@kristofvc.be');
         $contact->setMessage('Awesome website bro!');
 
-        $mailer->createMessage($contact)->shouldBeCalled()->willReturn($message);
+        $this->createMessage($contact)->shouldHaveType('\Swift_Message');
+    }
+
+    function it_should_send_a_message(\Swift_Mailer $mailer, \Swift_Message $message)
+    {
         $mailer->send($message)->shouldBeCalled();
 
-        $contactEvent = ContactEvent::createWith($contact);
-        $this->sendMail($contactEvent);
+        $this->send($message);
     }
 }
