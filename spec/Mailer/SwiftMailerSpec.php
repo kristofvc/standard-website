@@ -12,8 +12,6 @@
 namespace spec\Kristofvc\Contact\Mailer;
 
 use Doctrine\Common\Persistence\ObjectManager;
-use Kristofvc\Contact\Event\ContactEvent;
-use Kristofvc\Contact\Mailer\MailerInterface;
 use Kristofvc\Contact\Mailer\SwiftMailer;
 use Kristofvc\Contact\Model\Contact;
 use PhpSpec\ObjectBehavior;
