@@ -55,7 +55,7 @@ You can add other services in the Event-folder, or your own services the same wa
     
         $validatorBuilder = $this->getContainer()->get('validator.builder');
         $validatorBuilder->addXmlMappings([
-            __DIR__.'/../vendor/kristofvc/contact/src/Resources/config/Contact.validation.xml'
+            __DIR__.'/../vendor/kristofvc/contact/src/Resources/config/validation/Contact.validation.xml'
         ]);
     }
 ```
