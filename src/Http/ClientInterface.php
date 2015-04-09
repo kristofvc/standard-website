@@ -11,8 +11,6 @@
 
 namespace Kristofvc\Contact\Http;
 
-use Kristofvc\Contact\Model\ContactInterface;
-
 /**
  * Interface ClientInterface
  * @package Kristofvc\Contact\Http
