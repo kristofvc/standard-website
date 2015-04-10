@@ -54,24 +54,32 @@ final class Contact
     private $template;
 
     /**
+     * @var string
+     */
+    private $submitPath;
+
+    /**
      * @param EngineInterface $templating
      * @param FormFactoryInterface $formFactory
      * @param EventDispatcherInterface $eventDispatcher
      * @param ContactTypeInterface $contactType
      * @param $template
+     * @param null $submitPath
      */
     public function __construct(
         EngineInterface $templating,
         FormFactoryInterface $formFactory,
         EventDispatcherInterface $eventDispatcher,
         ContactTypeInterface $contactType,
-        $template
+        $template,
+        $submitPath = null
     ) {
         $this->templating = $templating;
         $this->formFactory = $formFactory;
         $this->eventDispatcher = $eventDispatcher;
         $this->contactType = $contactType;
         $this->template = $template;
+        $this->submitPath = $submitPath;
     }
 
     /**
@@ -81,7 +89,13 @@ final class Contact
     public function __invoke(Request $request)
     {
         $form = $this->formFactory->createBuilder($this->contactType);
-        $form->setAction($request->getBasePath());
+
+        if ($this->submitPath !== null) {
+            $form->setAction($this->submitPath);
+        } else {
+            $form->setAction($request->getUri());
+        }
+
         $form = $form->getForm();
 
         if ('POST' === $request->getMethod()) {
