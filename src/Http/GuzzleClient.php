@@ -12,6 +12,7 @@
 namespace Kristofvc\Contact\Http;
 
 use GuzzleHttp\ClientInterface as GuzzleClientInterface;
+use GuzzleHttp\Stream\Stream;
 use GuzzleHttp\Stream\StreamInterface;
 use Kristofvc\Contact\Http\ClientInterface as BaseClient;
 
@@ -29,20 +30,11 @@ final class GuzzleClient implements BaseClient
     private $client;
 
     /**
-     * @var StreamInterface
-     */
-    private $stream;
-
-    /**
      * @param GuzzleClientInterface $client
-     * @param StreamInterface $stream
      */
-    public function __construct(
-        GuzzleClientInterface $client,
-        StreamInterface $stream
-    ) {
+    public function __construct(GuzzleClientInterface $client)
+    {
         $this->client = $client;
-        $this->stream = $stream;
     }
 
     /**
@@ -50,10 +42,10 @@ final class GuzzleClient implements BaseClient
      */
     public function createPostRequest($webHook, array $data)
     {
-        $this->stream->write(json_encode($data));
+        $stream = Stream::factory(json_encode($data));
 
         $request = $this->client->createRequest('POST', $webHook);
-        $request->setBody($this->stream);
+        $request->setBody($stream);
 
         return $request;
     }

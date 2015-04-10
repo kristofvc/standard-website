@@ -13,6 +13,7 @@ namespace spec\Kristofvc\Contact\Http;
 
 use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Message\RequestInterface;
+use GuzzleHttp\Stream\Stream;
 use GuzzleHttp\Stream\StreamInterface;
 use Kristofvc\Contact\Http\GuzzleClient;
 use PhpSpec\ObjectBehavior;
@@ -38,9 +39,9 @@ class GuzzleClientSpec extends ObjectBehavior
         $this->shouldImplement('Kristofvc\Contact\Http\ClientInterface');
     }
 
-    function let(ClientInterface $client, StreamInterface $stream)
+    function let(ClientInterface $client)
     {
-        $this->beConstructedWith($client, $stream);
+        $this->beConstructedWith($client);
     }
 
     function it_can_send_request(ClientInterface $client, RequestInterface $request)
@@ -49,7 +50,7 @@ class GuzzleClientSpec extends ObjectBehavior
         $this->send($request);
     }
 
-    function it_can_create_request(ClientInterface $client, StreamInterface $stream, RequestInterface $request)
+    function it_can_create_request(ClientInterface $client, RequestInterface $request)
     {
         $webHook = 'http://incoming-webhook-url';
         $data = [
@@ -59,9 +60,8 @@ class GuzzleClientSpec extends ObjectBehavior
             'icon_emoji' => ':envelope:'
         ];
 
-        $stream->write(json_encode($data))->shouldBeCalled();
         $client->createRequest('POST', $webHook)->shouldBeCalled()->willReturn($request);
-        $request->setBody($stream)->shouldBeCalled();
+        $request->setBody(Argument::type('GuzzleHttp\Stream\Stream'))->shouldBeCalled();
 
         $this->createPostRequest($webHook, $data)->shouldReturn($request);
     }
