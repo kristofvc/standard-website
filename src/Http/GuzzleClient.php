@@ -13,7 +13,6 @@ namespace Kristofvc\Component\Contact\Http;
 
 use GuzzleHttp\ClientInterface as GuzzleClientInterface;
 use GuzzleHttp\Stream\Stream;
-use GuzzleHttp\Stream\StreamInterface;
 use Kristofvc\Component\Contact\Http\ClientInterface as BaseClient;
 
 /**

@@ -11,8 +11,6 @@
 
 namespace Kristofvc\Component\Contact\Event\Listener;
 
-use GuzzleHttp\Stream\Stream;
-use GuzzleHttp\Stream\StreamInterface;
 use Kristofvc\Component\Contact\Event\ContactEvent;
 use Kristofvc\Component\Contact\Http\ClientInterface;
 
