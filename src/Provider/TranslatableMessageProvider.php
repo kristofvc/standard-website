@@ -9,14 +9,14 @@
  * file that was distributed with this source code.
  */
 
-namespace Kristofvc\Contact\Provider;
+namespace Kristofvc\Component\Contact\Provider;
 
-use Kristofvc\Contact\Model\ContactInterface;
+use Kristofvc\Component\Contact\Model\ContactInterface;
 use Symfony\Component\Translation\TranslatorInterface;
 
 /**
  * Class TranslatableMessageProvider
- * @package Kristofvc\Contact\Provider
+ * @package Kristofvc\Component\Contact\Provider
  *
  * @author Kristof Van Cauwenbergh <kristof.vancauwenbergh@gmail.com>
  */

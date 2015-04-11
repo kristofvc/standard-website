@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Kristofvc\Contact\Form\Type;
+namespace Kristofvc\Component\Contact\Form\Type;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -17,7 +17,7 @@ use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
 /**
  * Class ContactType
- * @package Kristofvc\Contact\Form\Type
+ * @package Kristofvc\Component\Contact\Form\Type
  *
  * @author Kristof Van Cauwenbergh <kristof.vancauwenbergh@gmail.com>
  */
@@ -45,7 +45,7 @@ final class ContactType extends AbstractType implements ContactTypeInterface
      */
     public function __construct(
         $hasRecaptcha = false,
-        $dataClass = 'Kristofvc\Contact\Model\Contact',
+        $dataClass = 'Kristofvc\Component\Contact\Model\Contact',
         $name = 'contact_type'
     ) {
         $this->hasRecaptcha = $hasRecaptcha;

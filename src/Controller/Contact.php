@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace Kristofvc\Contact\Controller;
+namespace Kristofvc\Component\Contact\Controller;
 
-use Kristofvc\Contact\Event\ContactEvent;
-use Kristofvc\Contact\Event\ContactEvents;
-use Kristofvc\Contact\Form\Type\ContactTypeInterface;
+use Kristofvc\Component\Contact\Event\ContactEvent;
+use Kristofvc\Component\Contact\Event\ContactEvents;
+use Kristofvc\Component\Contact\Form\Type\ContactTypeInterface;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\Form\FormFactoryInterface;
 use Symfony\Component\HttpFoundation\Request;
@@ -22,7 +22,7 @@ use Symfony\Component\Templating\EngineInterface;
 
 /**
  * Class Contact
- * @package Kristofvc\Contact\Controller\Main
+ * @package Kristofvc\Component\Contact\Controller\Main
  *
  * @author Kristof Van Cauwenbergh <kristof.vancauwenbergh@gmail.com>
  */

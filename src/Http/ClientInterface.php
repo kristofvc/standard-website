@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace Kristofvc\Contact\Http;
+namespace Kristofvc\Component\Contact\Http;
 
 /**
  * Interface ClientInterface
- * @package Kristofvc\Contact\Http
+ * @package Kristofvc\Component\Contact\Http
  *
  * @author Kristof Van Cauwenbergh <kristof.vancauwenbergh@gmail.com>
  */

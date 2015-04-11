@@ -9,7 +9,7 @@ Follow the docs on [how to integrate the component with Symfony2](https://github
     
     namespace Acme\Demo\Entity;
     
-    use Kristofvc\Contact\Model\AbstractContact as BaseContact;
+    use Kristofvc\Component\Contact\Model\AbstractContact as BaseContact;
     
     /**
      * Class Contact
@@ -72,8 +72,8 @@ Follow the docs on [how to integrate the component with Symfony2](https://github
                             dir: %kernel.root_dir%/config/doctrine
                         kristofvc_contact:
                             type: xml
-                            prefix: Kristofvc\Contact\Model
-                            dir: %kernel.root_dir%/../vendor/kristofvc/contact/src/Resources/config/doctrine
+                            prefix: Kristofvc\Component\Contact\Model
+                            dir: %kernel.root_dir%/../vendor/kristofvc/component/contact/src/Resources/config/doctrine
                             
         ...                    
 ```
@@ -81,7 +81,7 @@ Follow the docs on [how to integrate the component with Symfony2](https://github
 ## Change the ContactType service
  
 ```xml
-    <service id="kristofvc_contact.form.type.contact" class="Kristofvc\Contact\Form\Type\ContactType">
+    <service id="kristofvc_contact.form.type.contact" class="Kristofvc\Component\Contact\Form\Type\ContactType">
         <argument>false</argument>
         <argument>Acme\Demo\Entity\Contact</argument>
     </service>
@@ -90,7 +90,7 @@ Follow the docs on [how to integrate the component with Symfony2](https://github
 ## Add a service for the listener
 
 ```xml
-    <service id="kristofvc_contact.event.persistence_listener" class="Kristofvc\Contact\Event\Listener\PersistenceListener">
+    <service id="kristofvc_contact.event.persistence_listener" class="Kristofvc\Component\Contact\Event\Listener\PersistenceListener">
         <argument type="service" id="doctrine.orm.acme_demo_contact_entity_manager" />
         <tag name="kernel.event_listener" event="contact.contact_submit_success_event" method="save" />
     </service>

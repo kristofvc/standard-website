@@ -9,17 +9,17 @@
  * file that was distributed with this source code.
  */
 
-namespace spec\Kristofvc\Contact\Provider;
+namespace spec\Kristofvc\Component\Contact\Provider;
 
-use Kristofvc\Contact\Model\Contact;
-use Kristofvc\Contact\Provider\TranslatableMessageProvider;
+use Kristofvc\Component\Contact\Model\Contact;
+use Kristofvc\Component\Contact\Provider\TranslatableMessageProvider;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 use Symfony\Component\Translation\Translator;
 
 /**
  * Class TranslatableMessageProviderSpec
- * @package spec\Kristofvc\Contact\Provider
+ * @package spec\Kristofvc\Component\Contact\Provider
  *
  * @author Kristof Van Cauwenbergh <kristof.vancauwenbergh@gmail.com>
  *
@@ -29,7 +29,7 @@ class TranslatableMessageProviderSpec extends ObjectBehavior
 {
     function it_is_initializable()
     {
-        $this->shouldHaveType('Kristofvc\Contact\Provider\TranslatableMessageProvider');
+        $this->shouldHaveType('Kristofvc\Component\Contact\Provider\TranslatableMessageProvider');
     }
 
     function let(Translator $translator)
@@ -39,7 +39,7 @@ class TranslatableMessageProviderSpec extends ObjectBehavior
 
     function it_should_implement_message_provider_interface()
     {
-        $this->shouldImplement('Kristofvc\Contact\Provider\MessageProviderInterface');
+        $this->shouldImplement('Kristofvc\Component\Contact\Provider\MessageProviderInterface');
     }
 
     function it_should_call_trans_with_the_right_values(Translator $translator)

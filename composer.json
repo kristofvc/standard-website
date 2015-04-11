@@ -36,7 +36,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Kristofvc\\Contact\\": [ "src/" ]
+            "Kristofvc\\Component\\Contact\\": [ "src/" ]
         }
     },
     "config": {

@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace Kristofvc\Contact\Event;
+namespace Kristofvc\Component\Contact\Event;
 
 /**
  * Class ContactEvents
- * @package Kristofvc\Contact\Event
+ * @package Kristofvc\Component\Contact\Event
  *
  * @author Kristof Van Cauwenbergh <kristof.vancauwenbergh@gmail.com>
  */

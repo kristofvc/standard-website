@@ -9,14 +9,14 @@
  * file that was distributed with this source code.
  */
 
-namespace Kristofvc\Contact\Event;
+namespace Kristofvc\Component\Contact\Event;
 
-use Kristofvc\Contact\Model\ContactInterface;
+use Kristofvc\Component\Contact\Model\ContactInterface;
 use Symfony\Component\EventDispatcher\Event;
 
 /**
  * Class ContactEvent
- * @package Kristofvc\Contact\Event
+ * @package Kristofvc\Component\Contact\Event
  *
  * @author Kristof Van Cauwenbergh <kristof.vancauwenbergh@gmail.com>
  */

@@ -9,13 +9,13 @@
  * file that was distributed with this source code.
  */
 
-namespace Kristofvc\Contact\Mailer;
+namespace Kristofvc\Component\Contact\Mailer;
 
-use Kristofvc\Contact\Model\ContactInterface;
+use Kristofvc\Component\Contact\Model\ContactInterface;
 
 /**
  * Class SwiftMailer
- * @package Kristofvc\Contact\Mailer
+ * @package Kristofvc\Component\Contact\Mailer
  *
  * @author Kristof Van Cauwenbergh <kristof.vancauwenbergh@gmail.com>
  */

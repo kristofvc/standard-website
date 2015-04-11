@@ -9,19 +9,19 @@
  * file that was distributed with this source code.
  */
 
-namespace spec\Kristofvc\Contact\Http;
+namespace spec\Kristofvc\Component\Contact\Http;
 
 use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Message\RequestInterface;
 use GuzzleHttp\Stream\Stream;
 use GuzzleHttp\Stream\StreamInterface;
-use Kristofvc\Contact\Http\GuzzleClient;
+use Kristofvc\Component\Contact\Http\GuzzleClient;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 
 /**
  * Class GuzzleClientSpec
- * @package spec\Kristofvc\Contact\Http
+ * @package spec\Kristofvc\Component\Contact\Http
  *
  * @author Kristof Van Cauwenbergh <kristof.vancauwenbergh@gmail.com>
  *
@@ -31,12 +31,12 @@ class GuzzleClientSpec extends ObjectBehavior
 {
     function it_is_initializable()
     {
-        $this->shouldHaveType('Kristofvc\Contact\Http\GuzzleClient');
+        $this->shouldHaveType('Kristofvc\Component\Contact\Http\GuzzleClient');
     }
 
     function it_should_implement_client_interface()
     {
-        $this->shouldImplement('Kristofvc\Contact\Http\ClientInterface');
+        $this->shouldImplement('Kristofvc\Component\Contact\Http\ClientInterface');
     }
 
     function let(ClientInterface $client)

@@ -9,13 +9,13 @@
  * file that was distributed with this source code.
  */
 
-namespace spec\Kristofvc\Contact\Event\Listener;
+namespace spec\Kristofvc\Component\Contact\Event\Listener;
 
 use Doctrine\Common\Persistence\ObjectManager;
-use Kristofvc\Contact\Event\ContactEvent;
-use Kristofvc\Contact\Event\Listener\SuccessNoticeListener;
-use Kristofvc\Contact\Model\Contact;
-use Kristofvc\Contact\Provider\MessageProviderInterface;
+use Kristofvc\Component\Contact\Event\ContactEvent;
+use Kristofvc\Component\Contact\Event\Listener\SuccessNoticeListener;
+use Kristofvc\Component\Contact\Model\Contact;
+use Kristofvc\Component\Contact\Provider\MessageProviderInterface;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 use Symfony\Component\HttpFoundation\Session\Flash\FlashBag;
@@ -24,7 +24,7 @@ use Symfony\Component\HttpFoundation\Session\Session;
 
 /**
  * Class SuccessNoticeListenerSpec
- * @package spec\Kristofvc\Contact\Event\Listener
+ * @package spec\Kristofvc\Component\Contact\Event\Listener
  *
  * @author Kristof Van Cauwenbergh <kristof.vancauwenbergh@gmail.com>
  *
@@ -34,7 +34,7 @@ class SuccessNoticeListenerSpec extends ObjectBehavior
 {
     function it_is_initializable()
     {
-        $this->shouldHaveType('Kristofvc\Contact\Event\Listener\SuccessNoticeListener');
+        $this->shouldHaveType('Kristofvc\Component\Contact\Event\Listener\SuccessNoticeListener');
     }
 
     function let(Session $session, MessageProviderInterface $messageProvider)

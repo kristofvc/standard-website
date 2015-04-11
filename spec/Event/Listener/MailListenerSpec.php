@@ -9,19 +9,19 @@
  * file that was distributed with this source code.
  */
 
-namespace spec\Kristofvc\Contact\Event\Listener;
+namespace spec\Kristofvc\Component\Contact\Event\Listener;
 
 use Doctrine\Common\Persistence\ObjectManager;
-use Kristofvc\Contact\Event\ContactEvent;
-use Kristofvc\Contact\Mailer\MailerInterface;
-use Kristofvc\Contact\Event\Listener\MailListener;
-use Kristofvc\Contact\Model\Contact;
+use Kristofvc\Component\Contact\Event\ContactEvent;
+use Kristofvc\Component\Contact\Mailer\MailerInterface;
+use Kristofvc\Component\Contact\Event\Listener\MailListener;
+use Kristofvc\Component\Contact\Model\Contact;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 
 /**
  * Class MailListenerSpec
- * @package spec\Kristofvc\Contact\Event\Listener
+ * @package spec\Kristofvc\Component\Contact\Event\Listener
  *
  * @author Kristof Van Cauwenbergh <kristof.vancauwenbergh@gmail.com>
  *
@@ -31,7 +31,7 @@ class MailListenerSpec extends ObjectBehavior
 {
     function it_is_initializable()
     {
-        $this->shouldHaveType('Kristofvc\Contact\Event\Listener\MailListener');
+        $this->shouldHaveType('Kristofvc\Component\Contact\Event\Listener\MailListener');
     }
 
     function let(MailerInterface $mailer)

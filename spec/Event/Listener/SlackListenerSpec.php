@@ -9,18 +9,18 @@
  * file that was distributed with this source code.
  */
 
-namespace spec\Kristofvc\Contact\Event\Listener;
+namespace spec\Kristofvc\Component\Contact\Event\Listener;
 
-use Kristofvc\Contact\Event\ContactEvent;
-use Kristofvc\Contact\Event\Listener\SlackListener;
-use Kristofvc\Contact\Http\ClientInterface;
-use Kristofvc\Contact\Model\Contact;
+use Kristofvc\Component\Contact\Event\ContactEvent;
+use Kristofvc\Component\Contact\Event\Listener\SlackListener;
+use Kristofvc\Component\Contact\Http\ClientInterface;
+use Kristofvc\Component\Contact\Model\Contact;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 
 /**
  * Class SlackListenerSpec
- * @package spec\Kristofvc\Contact\Event\Listener
+ * @package spec\Kristofvc\Component\Contact\Event\Listener
  *
  * @author Kristof Van Cauwenbergh <kristof.vancauwenbergh@gmail.com>
  *
@@ -30,7 +30,7 @@ class SlackListenerSpec extends ObjectBehavior
 {
     function it_is_initializable()
     {
-        $this->shouldHaveType('Kristofvc\Contact\Event\Listener\SlackListener');
+        $this->shouldHaveType('Kristofvc\Component\Contact\Event\Listener\SlackListener');
     }
 
     function let(ClientInterface $client)

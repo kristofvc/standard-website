@@ -9,16 +9,16 @@
  * file that was distributed with this source code.
  */
 
-namespace Kristofvc\Contact\Event\Listener;
+namespace Kristofvc\Component\Contact\Event\Listener;
 
 use GuzzleHttp\Stream\Stream;
 use GuzzleHttp\Stream\StreamInterface;
-use Kristofvc\Contact\Event\ContactEvent;
-use Kristofvc\Contact\Http\ClientInterface;
+use Kristofvc\Component\Contact\Event\ContactEvent;
+use Kristofvc\Component\Contact\Http\ClientInterface;
 
 /**
  * Class SlackListener
- * @package Kristofvc\Contact\Event\Listener
+ * @package Kristofvc\Component\Contact\Event\Listener
  *
  * @author Kristof Van Cauwenbergh <kristof.vancauwenbergh@gmail.com>
  */

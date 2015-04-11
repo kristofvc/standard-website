@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace Kristofvc\Contact\Model;
+namespace Kristofvc\Component\Contact\Model;
 
 /**
  * Class Contact
- * @package Kristofvc\Contact\Model
+ * @package Kristofvc\Component\Contact\Model
  *
  * @author Kristof Van Cauwenbergh <kristof.vancauwenbergh@gmail.com>
  */

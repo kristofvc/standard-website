@@ -9,16 +9,16 @@
  * file that was distributed with this source code.
  */
 
-namespace Kristofvc\Contact\Http;
+namespace Kristofvc\Component\Contact\Http;
 
 use GuzzleHttp\ClientInterface as GuzzleClientInterface;
 use GuzzleHttp\Stream\Stream;
 use GuzzleHttp\Stream\StreamInterface;
-use Kristofvc\Contact\Http\ClientInterface as BaseClient;
+use Kristofvc\Component\Contact\Http\ClientInterface as BaseClient;
 
 /**
  * Class GuzzleClient
- * @package Kristofvc\Contact\Http
+ * @package Kristofvc\Component\Contact\Http
  *
  * @author Kristof Van Cauwenbergh <kristof.vancauwenbergh@gmail.com>
  */

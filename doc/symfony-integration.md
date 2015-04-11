@@ -3,7 +3,7 @@
 ## Add some services
 
 ```xml
-        <service id="kristofvc_contact.controller.contact" class="Kristofvc\Contact\Controller\Contact">
+        <service id="kristofvc_contact.controller.contact" class="Kristofvc\Component\Contact\Controller\Contact">
             <argument type="service" id="templating" />
             <argument type="service" id="form.factory" />
             <argument type="service" id="event_dispatcher" />
@@ -11,26 +11,26 @@
             <argument>:Main:contact.html.twig</argument>
         </service>
 
-        <service id="kristofvc_contact.mailer.swift" class="Kristofvc\Contact\Mailer\SwiftMailer">
+        <service id="kristofvc_contact.mailer.swift" class="Kristofvc\Component\Contact\Mailer\SwiftMailer">
             <argument type="service" id="mailer" />
             <argument>%mailer_from%</argument>
             <argument>%mailer_to%</argument>
         </service>
 
-        <service id="kristofvc_contact.event.mail_listener" class="Kristofvc\Contact\Event\Listener\MailListener">
+        <service id="kristofvc_contact.event.mail_listener" class="Kristofvc\Component\Contact\Event\Listener\MailListener">
             <argument type="service" id="kristofvc_contact.mailer.swift" />
             <tag name="kernel.event_listener" event="contact.contact_submitted_event" method="sendMail" />
         </service>
 
-        <service id="kristofvc_contact.provider.simple_message" class="Kristofvc\Contact\Provider\SimpleMessageProvider" />
+        <service id="kristofvc_contact.provider.simple_message" class="Kristofvc\Component\Contact\Provider\SimpleMessageProvider" />
 
-        <service id="kristofvc_contact.event.success_notice_listener" class="Kristofvc\Contact\Event\Listener\SuccessNoticeListener">
+        <service id="kristofvc_contact.event.success_notice_listener" class="Kristofvc\Component\Contact\Event\Listener\SuccessNoticeListener">
             <argument type="service" id="session" />
             <argument type="service" id="kristofvc_contact.provider.simple_message" />
             <tag name="kernel.event_listener" event="contact.contact_submitted_event" method="sendSuccessNotice" />
         </service>
 
-        <service id="kristofvc_contact.form.type.contact" class="Kristofvc\Contact\Form\Type\ContactType">
+        <service id="kristofvc_contact.form.type.contact" class="Kristofvc\Component\Contact\Form\Type\ContactType">
             <argument>false</argument>
         </service>
 ```

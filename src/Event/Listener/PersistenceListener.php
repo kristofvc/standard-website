@@ -9,14 +9,14 @@
  * file that was distributed with this source code.
  */
 
-namespace Kristofvc\Contact\Event\Listener;
+namespace Kristofvc\Component\Contact\Event\Listener;
 
 use Doctrine\Common\Persistence\ObjectManager;
-use Kristofvc\Contact\Event\ContactEvent;
+use Kristofvc\Component\Contact\Event\ContactEvent;
 
 /**
  * Class PersistenceListener
- * @package Kristofvc\Contact\Event\Listener
+ * @package Kristofvc\Component\Contact\Event\Listener
  *
  * @author Hans Stevens <hnsstvns@gmail.com>
  * @author Kristof Van Cauwenbergh <kristof.vancauwenbergh@gmail.com>

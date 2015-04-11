@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace spec\Kristofvc\Contact\Form\Type;
+namespace spec\Kristofvc\Component\Contact\Form\Type;
 
-use Kristofvc\Contact\Form\Type\ContactType;
+use Kristofvc\Component\Contact\Form\Type\ContactType;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 use Symfony\Component\Form\FormBuilder;
@@ -19,7 +19,7 @@ use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
 /**
  * Class ContactTypeSpec
- * @package spec\Kristofvc\Contact\Form\Type
+ * @package spec\Kristofvc\Component\Contact\Form\Type
  *
  * @author Kristof Van Cauwenbergh <kristof.vancauwenbergh@gmail.com>
  * @author Hans Stevens <hnsstvns@gmail.com>
@@ -30,19 +30,19 @@ class ContactTypeSpec extends ObjectBehavior
 {
     function it_is_initializable()
     {
-        $this->shouldHaveType('Kristofvc\Contact\Form\Type\ContactType');
+        $this->shouldHaveType('Kristofvc\Component\Contact\Form\Type\ContactType');
         $this->shouldHaveType('Symfony\Component\Form\AbstractType');
     }
 
     function it_should_implement_contact_type_interface()
     {
-        $this->shouldImplement('Kristofvc\Contact\Form\Type\ContactTypeInterface');
+        $this->shouldImplement('Kristofvc\Component\Contact\Form\Type\ContactTypeInterface');
         $this->shouldImplement('Symfony\Component\Form\FormTypeInterface');
     }
 
     function let()
     {
-        $this->beConstructedWith(false, 'Kristofvc\Contact\Model\Contact');
+        $this->beConstructedWith(false, 'Kristofvc\Component\Contact\Model\Contact');
     }
 
     function it_should_build_form_with_chosen_fields(FormBuilder $builder)
@@ -59,7 +59,7 @@ class ContactTypeSpec extends ObjectBehavior
         $resolver
             ->setDefaults(
                 [
-                    'data_class' => 'Kristofvc\Contact\Model\Contact'
+                    'data_class' => 'Kristofvc\Component\Contact\Model\Contact'
                 ]
             )
             ->shouldBeCalled();
@@ -74,7 +74,7 @@ class ContactTypeSpec extends ObjectBehavior
 
     function it_can_fetch_the_set_name()
     {
-        $this->beConstructedWith(true, 'Kristofvc\Contact\Model\Contact', 'other_type');
+        $this->beConstructedWith(true, 'Kristofvc\Component\Contact\Model\Contact', 'other_type');
         $this->getName()->shouldReturn('other_type');
     }
 }

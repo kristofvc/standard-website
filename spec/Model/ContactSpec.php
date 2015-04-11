@@ -9,15 +9,15 @@
  * file that was distributed with this source code.
  */
 
-namespace spec\Kristofvc\Contact\Model;
+namespace spec\Kristofvc\Component\Contact\Model;
 
-use Kristofvc\Contact\Model\Contact;
+use Kristofvc\Component\Contact\Model\Contact;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 
 /**
  * Class ContactSpec
- * @package spec\Kristofvc\Contact\Model
+ * @package spec\Kristofvc\Component\Contact\Model
  *
  * @author Kristof Van Cauwenbergh <kristof.vancauwenbergh@gmail.com>
  *
@@ -27,12 +27,12 @@ class ContactSpec extends ObjectBehavior
 {
     function it_is_initializable()
     {
-        $this->shouldHaveType('Kristofvc\Contact\Model\Contact');
+        $this->shouldHaveType('Kristofvc\Component\Contact\Model\Contact');
     }
 
     function it_should_implement_contact_interface()
     {
-        $this->shouldImplement('Kristofvc\Contact\Model\ContactInterface');
+        $this->shouldImplement('Kristofvc\Component\Contact\Model\ContactInterface');
     }
 
     function it_has_no_name_by_default()

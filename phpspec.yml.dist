@@ -1,4 +1,4 @@
 suites:
     contact_suite:
-        namespace: Kristofvc\Contact
-        psr4_prefix: Kristofvc\Contact
+        namespace: Kristofvc\Component\Contact
+        psr4_prefix: Kristofvc\Component\Contact

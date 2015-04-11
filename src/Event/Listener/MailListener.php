@@ -9,14 +9,14 @@
  * file that was distributed with this source code.
  */
 
-namespace Kristofvc\Contact\Event\Listener;
+namespace Kristofvc\Component\Contact\Event\Listener;
 
-use Kristofvc\Contact\Event\ContactEvent;
-use Kristofvc\Contact\Mailer\MailerInterface;
+use Kristofvc\Component\Contact\Event\ContactEvent;
+use Kristofvc\Component\Contact\Mailer\MailerInterface;
 
 /**
  * Class MailListener
- * @package Kristofvc\Contact\Event\Listener
+ * @package Kristofvc\Component\Contact\Event\Listener
  *
  * @author Kristof Van Cauwenbergh <kristof.vancauwenbergh@gmail.com>
  */

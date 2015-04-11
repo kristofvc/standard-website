@@ -9,7 +9,7 @@ This version of the component required at least PHP v5.4.
 ```
     "require": {
         ...
-        "kristofvc/contact": "~1.0"
+        "kristofvc/contact": "~1.1"
     }
 ```
  

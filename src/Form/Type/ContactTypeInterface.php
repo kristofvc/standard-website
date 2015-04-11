@@ -9,13 +9,13 @@
  * file that was distributed with this source code.
  */
 
-namespace Kristofvc\Contact\Form\Type;
+namespace Kristofvc\Component\Contact\Form\Type;
 
 use Symfony\Component\Form\FormTypeInterface;
 
 /**
  * Interface ContactTypeInterface
- * @package Kristofvc\Contact\Form\Type
+ * @package Kristofvc\Component\Contact\Form\Type
  *
  * @author Kristof Van Cauwenbergh <kristof.vancauwenbergh@gmail.com>
  */

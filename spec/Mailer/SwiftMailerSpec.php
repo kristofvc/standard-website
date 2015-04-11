@@ -9,17 +9,17 @@
  * file that was distributed with this source code.
  */
 
-namespace spec\Kristofvc\Contact\Mailer;
+namespace spec\Kristofvc\Component\Contact\Mailer;
 
 use Doctrine\Common\Persistence\ObjectManager;
-use Kristofvc\Contact\Mailer\SwiftMailer;
-use Kristofvc\Contact\Model\Contact;
+use Kristofvc\Component\Contact\Mailer\SwiftMailer;
+use Kristofvc\Component\Contact\Model\Contact;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 
 /**
  * Class SwiftMailerSpec
- * @package spec\Kristofvc\Contact\Event\Listener
+ * @package spec\Kristofvc\Component\Contact\Event\Listener
  *
  * @author Kristof Van Cauwenbergh <kristof.vancauwenbergh@gmail.com>
  *
@@ -29,7 +29,7 @@ class SwiftMailerSpec extends ObjectBehavior
 {
     function it_is_initializable()
     {
-        $this->shouldHaveType('Kristofvc\Contact\Mailer\SwiftMailer');
+        $this->shouldHaveType('Kristofvc\Component\Contact\Mailer\SwiftMailer');
     }
 
     function let(\Swift_Mailer $mailer)

@@ -9,15 +9,15 @@
  * file that was distributed with this source code.
  */
 
-namespace Kristofvc\Contact\Event\Listener;
+namespace Kristofvc\Component\Contact\Event\Listener;
 
-use Kristofvc\Contact\Event\ContactEvent;
-use Kristofvc\Contact\Provider\MessageProviderInterface;
+use Kristofvc\Component\Contact\Event\ContactEvent;
+use Kristofvc\Component\Contact\Provider\MessageProviderInterface;
 use Symfony\Component\HttpFoundation\Session\Session;
 
 /**
  * Class SuccessNoticeListener
- * @package Kristofvc\Contact\Event\Listener
+ * @package Kristofvc\Component\Contact\Event\Listener
  *
  * @author Kristof Van Cauwenbergh <kristof.vancauwenbergh@gmail.com>
  */

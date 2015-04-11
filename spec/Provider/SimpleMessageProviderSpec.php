@@ -9,16 +9,16 @@
  * file that was distributed with this source code.
  */
 
-namespace spec\Kristofvc\Contact\Provider;
+namespace spec\Kristofvc\Component\Contact\Provider;
 
-use Kristofvc\Contact\Model\Contact;
-use Kristofvc\Contact\Provider\SimpleMessageProvider;
+use Kristofvc\Component\Contact\Model\Contact;
+use Kristofvc\Component\Contact\Provider\SimpleMessageProvider;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 
 /**
  * Class SimpleMessageProviderSpec
- * @package spec\Kristofvc\Contact\Provider
+ * @package spec\Kristofvc\Component\Contact\Provider
  *
  * @author Kristof Van Cauwenbergh <kristof.vancauwenbergh@gmail.com>
  *
@@ -28,12 +28,12 @@ class SimpleMessageProviderSpec extends ObjectBehavior
 {
     function it_is_initializable()
     {
-        $this->shouldHaveType('Kristofvc\Contact\Provider\SimpleMessageProvider');
+        $this->shouldHaveType('Kristofvc\Component\Contact\Provider\SimpleMessageProvider');
     }
 
     function it_should_implement_message_provider_interface()
     {
-        $this->shouldImplement('Kristofvc\Contact\Provider\MessageProviderInterface');
+        $this->shouldImplement('Kristofvc\Component\Contact\Provider\MessageProviderInterface');
     }
 
     function it_should_have_a_message()
