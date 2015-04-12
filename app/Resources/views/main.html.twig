@@ -1,0 +1,25 @@
+{% spaceless %}
+    <!DOCTYPE html>
+
+    <html lang="en">
+
+        <head>
+            <meta charset="utf-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <meta name="description" content="awesome standard website">
+            <meta name="author" content="kristofvc">
+            <link rel="icon" href="{{ asset('favicon.ico') }}">
+
+            <title>Awesome standard website</title>
+        </head>
+
+        <body>
+            {% block body %}
+            {% endblock body %}
+
+            {% block footer %}
+            {% endblock %}
+        </body>
+    </html>
+{% endspaceless %}

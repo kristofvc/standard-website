@@ -1,0 +1,11 @@
+.DS_Store
+.idea/
+.vagrant/
+vendor/
+app/config/parameters.yml
+app/cache/*
+app/logs/*
+var/*
+bin/*
+!bin/console
+!bin/symfony_requirements
