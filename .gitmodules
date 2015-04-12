@@ -1,0 +1,3 @@
+[submodule "src/component/Contact"]
+	fetchRecurseSubmodules = true
+	ignore = all
