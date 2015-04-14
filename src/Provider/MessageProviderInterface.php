@@ -22,6 +22,9 @@ use Kristofvc\Component\Contact\Model\ContactInterface;
 interface MessageProviderInterface
 {
     /**
+     * This method should return the message
+     * you want to do something with in your application
+     *
      * @param ContactInterface $contact
      * @return string
      */

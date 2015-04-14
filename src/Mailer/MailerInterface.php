@@ -22,11 +22,16 @@ use Kristofvc\Component\Contact\Model\ContactInterface;
 interface MailerInterface
 {
     /**
+     * Effectively send the mail
+     *
      * @param $message
      */
     public function send($message);
 
     /**
+     * Create a mail message
+     * that can be send through the send method
+     *
      * @param ContactInterface $contact
      *
      * @return mixed

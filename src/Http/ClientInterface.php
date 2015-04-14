@@ -20,6 +20,9 @@ namespace Kristofvc\Component\Contact\Http;
 interface ClientInterface
 {
     /**
+     * Create a post request
+     * that can be send through the send method
+     *
      * @param $webHook
      * @param array $data
      *
@@ -28,6 +31,8 @@ interface ClientInterface
     public function createPostRequest($webHook, array $data);
 
     /**
+     * Effectively send the request
+     *
      * @param $request
      */
     public function send($request);
