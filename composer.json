@@ -9,7 +9,7 @@
           "Kristofvc\\Web\\": "src/",
           "Kristofvc\\Component\\": "src/component/",
           "Kristofvc\\Bundle\\": "src/bundle/",
-          "Kristofvc\\Component\\Contact": "src/component/Contact/src"
+          "Kristofvc\\Component\\Contact\\": "src/component/Contact/src"
         }
     },
     "require": {
@@ -24,10 +24,12 @@
         "symfony/monolog-bundle": "~2.4",
         "sensio/distribution-bundle": "~3.0,>=3.0.12",
         "sensio/framework-extra-bundle": "~3.0,>=3.0.2",
-        "incenteev/composer-parameter-handler": "~2.0"
+        "incenteev/composer-parameter-handler": "~2.0",
+        "guzzlehttp/guzzle": "~5.2"
     },
     "require-dev": {
-        "squizlabs/php_codesniffer": "2.*"
+        "squizlabs/php_codesniffer": "~2.3",
+        "phpspec/phpspec": "~2.1"
     },
     "scripts": {
         "post-root-package-install": [

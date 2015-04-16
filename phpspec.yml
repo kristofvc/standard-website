@@ -1,0 +1,6 @@
+suites:
+    Contact:
+        namespace: Kristofvc\Component\Contact
+        psr4_prefix: Kristofvc\Component\Contact
+        spec_path: src/component/Contact
+        src_path: src/component/Contact
