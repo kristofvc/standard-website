@@ -42,7 +42,7 @@ class AppKernel extends Kernel
     public function getCustomCompilerPasses()
     {
         return [
-            new \Kristofvc\Web\DependencyInjection\ValidationCompilerPass()
+
         ];
     }
 

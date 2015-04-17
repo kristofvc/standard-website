@@ -32,9 +32,6 @@ twig:
             - "::Form/form_div_layout.html.twig"
     debug:            "%kernel.debug%"
     strict_variables: "%kernel.debug%"
-    globals:
-        websiteTitle: %website_title%
-        gaAnalyticsCode: %ga_analytics_code%
 
 # Assetic Configuration
 assetic:
