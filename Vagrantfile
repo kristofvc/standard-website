@@ -1,5 +1,5 @@
-# Check to determine whether you're on a windows or linux/os-x host,
-# later on we use this to launch ansible in the supported way (native or on your newly created box)
+# Check to determine whether we're on a windows or linux/os-x host,
+# later on we use this to launch ansible in the supported way
 # source: https://stackoverflow.com/questions/2108727/which-in-ruby-checking-if-program-exists-in-path-from-ruby
 def which(cmd)
     exts = ENV['PATHEXT'] ? ENV['PATHEXT'].split(';') : ['']
@@ -14,40 +14,40 @@ end
 Vagrant.configure("2") do |config|
 
     config.vm.provider :virtualbox do |v|
-            v.name = "kristofvc"
-            v.customize [
-                "modifyvm", :id,
-                "--name", "kristofvc",
-                "--memory", 1024,
-                "--natdnshostresolver1", "on",
-                "--cpus", 1,
-            ]
-        end
+        v.name = "standard-website"
+        v.customize [
+            "modifyvm", :id,
+            "--name", "standard-website",
+            "--memory", 1024,
+            "--natdnshostresolver1", "on",
+            "--cpus", 1,
+        ]
+    end
 
     config.vm.box = "ubuntu/trusty64"
     
-    config.vm.network :private_network, ip: "192.168.33.37"
-
+    config.vm.network :private_network, ip: "192.168.37.16"
     config.ssh.forward_agent = true
 
-    ###########################################################################################
-    # Ansible provisioning (you need to have ansible installed or run the windows provisioning)
-    # Windows provisioning installs ansible in your box and runs it there
-    ###########################################################################################
+    #############################################################
+    # Ansible provisioning (you need to have ansible installed)
+    #############################################################
 
+    
     if which('ansible-playbook')
         config.vm.provision "ansible" do |ansible|
             ansible.playbook = "ansible/playbook.yml"
             ansible.inventory_path = "ansible/inventories/dev"
             ansible.limit = 'all'
             ansible.extra_vars = {
-                private_interface: "192.168.33.37",
-                hostname: "kristofvc"
+                private_interface: "192.168.37.16",
+                hostname: "standard-website"
             }
         end
     else
-        config.vm.provision :shell, path: "ansible/windows.sh", args: ["kristofvc"]
+        config.vm.provision :shell, path: "ansible/windows.sh", args: ["standard-website"]
     end
 
+    
     config.vm.synced_folder "./", "/vagrant", type: "nfs"
 end

@@ -3,7 +3,7 @@
   sudo: true
   vars:
     web_server: nginxphp
-    servername: kristofvc.dev
+    servername: standard-website.dev 192.168.37.16
     timezone: Europe/Brussels
   vars_files:
     - vars/mysql.yml
@@ -16,6 +16,5 @@
     - php5-fpm
     - node
     - composer
-    - capifony
     - phpcommon
     - mysql
