@@ -1,5 +1,5 @@
 mysql:
-    root_password: 
+    root_password: root
     user: root
     password: root
-    database: kristofvc
+    database: standardwebsite
