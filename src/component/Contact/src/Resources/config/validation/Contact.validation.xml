@@ -13,10 +13,6 @@
             <constraint name="Email" />
         </property>
 
-        <property name="recaptcha">
-            <constraint name="EWZ\Bundle\RecaptchaBundle\Validator\Constraints\True" />
-        </property>
-
         <property name="message">
             <constraint name="NotBlank" />
         </property>
