@@ -22,7 +22,7 @@
 
         <service id="kristofvc_contact.event.mail_listener" class="Kristofvc\Component\Contact\Event\Listener\MailListener">
             <argument type="service" id="kristofvc_contact.mailer.swift" />
-            <tag name="kernel.event_listener" event="contact.contact_submitted_event" method="sendMail" />
+            <tag name="kernel.event_listener" event="contact.contact_submit_success_event" method="sendMail" />
         </service>
 
         <service id="kristofvc_contact.provider.simple_message" class="Kristofvc\Component\Contact\Provider\SimpleMessageProvider" />
@@ -30,7 +30,7 @@
         <service id="kristofvc_contact.event.success_notice_listener" class="Kristofvc\Component\Contact\Event\Listener\SuccessNoticeListener">
             <argument type="service" id="session" />
             <argument type="service" id="kristofvc_contact.provider.simple_message" />
-            <tag name="kernel.event_listener" event="contact.contact_submitted_event" method="sendSuccessNotice" />
+            <tag name="kernel.event_listener" event="contact.contact_submit_success_event" method="sendSuccessNotice" />
         </service>
 
         <service id="kristofvc_contact.form.type.contact" class="Kristofvc\Component\Contact\Form\Type\ContactType">
