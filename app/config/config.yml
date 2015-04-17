@@ -8,7 +8,7 @@ framework:
     #translator:      { fallbacks: ["%locale%"] }
     secret:          "%secret%"
     router:
-        resource: "%kernel.root_dir%/config/routing.yml"
+        resource: "%kernel.root_dir%/config/routing.xml"
         strict_requirements: ~
     form:            ~
     csrf_protection: ~
@@ -49,7 +49,7 @@ assetic:
 # Doctrine Configuration
 doctrine:
     dbal:
-        drivr:   "%database_driver%"
+        driver:   "%database_driver%"
         host:     "%database_host%"
         port:     "%database_port%"
         dbname:   "%database_name%"

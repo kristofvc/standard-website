@@ -1,0 +1,40 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service id="kristofvc_contact.controller.contact" class="Kristofvc\Component\Contact\Controller\Contact">
+            <argument type="service" id="templating" />
+            <argument type="service" id="form.factory" />
+            <argument type="service" id="event_dispatcher" />
+            <argument type="service" id="kristofvc_contact.form.type.contact" />
+            <argument>KristofvcContactBundle::contact_form.html.twig</argument>
+            <argument>/contact</argument>
+        </service>
+
+        <service id="kristofvc_contact.mailer.swift" class="Kristofvc\Component\Contact\Mailer\SwiftMailer">
+            <argument type="service" id="mailer" />
+            <argument>%mailer_from%</argument>
+            <argument>%mailer_to%</argument>
+        </service>
+
+        <service id="kristofvc_contact.event.mail_listener" class="Kristofvc\Component\Contact\Event\Listener\MailListener">
+            <argument type="service" id="kristofvc_contact.mailer.swift" />
+            <tag name="kernel.event_listener" event="contact.contact_submitted_event" method="sendMail" />
+        </service>
+
+        <service id="kristofvc_contact.provider.simple_message" class="Kristofvc\Component\Contact\Provider\SimpleMessageProvider" />
+
+        <service id="kristofvc_contact.event.success_notice_listener" class="Kristofvc\Component\Contact\Event\Listener\SuccessNoticeListener">
+            <argument type="service" id="session" />
+            <argument type="service" id="kristofvc_contact.provider.simple_message" />
+            <tag name="kernel.event_listener" event="contact.contact_submitted_event" method="sendSuccessNotice" />
+        </service>
+
+        <service id="kristofvc_contact.form.type.contact" class="Kristofvc\Component\Contact\Form\Type\ContactType">
+            <argument>false</argument>
+        </service>
+    </services>
+</container>

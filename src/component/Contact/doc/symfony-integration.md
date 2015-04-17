@@ -35,7 +35,7 @@
         </service>
 ```
 
-You can add other services in the Event-folder, or your own services the same way.
+You can add the other listeners in the Event-folder, or your own services the same way.
 
 ## Add a route
 
