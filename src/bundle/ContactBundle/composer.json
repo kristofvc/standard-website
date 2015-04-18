@@ -1,0 +1,29 @@
+{
+    "name": "kristofvc/contact-bundle",
+    "type": "component",
+    "description": "This is a bundle that defines a contact page",
+    "keywords": ["contact", "form"],
+    "homepage": "http://github.com/kristofvc/Contact-bundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Kristof Van Cauwenbergh",
+            "email": "kristof.vancauwenbergh@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4",
+        "symfony/symfony": ">=2.3"
+    },
+    "require-dev": {
+        "phpspec/phpspec": "~2.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Kristofvc\\Bundle\\ContactBundle\\": [ "/" ]
+        }
+    },
+    "config": {
+      "bin-dir": "bin"
+    }
+}
