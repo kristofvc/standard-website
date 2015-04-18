@@ -7,5 +7,9 @@
 
     <import resource="@KristofvcContactBundle/Resources/config/routing.xml" />
 
-    <!-- <import resource="@FOSUserBundle/Resources/config/routing/security.xml"/>-->
+    <route id="kristofvc_web_home" path="/">
+        <default key="_controller">
+            kristofvc_web.controller.home
+        </default>
+    </route>
 </routes>
