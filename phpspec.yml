@@ -4,3 +4,8 @@ suites:
         psr4_prefix: Kristofvc\Component\Contact
         spec_path: src/component/Contact
         src_path: src/component/Contact/src
+    Media:
+        namespace: Kristofvc\Component\Media
+        psr4_prefix: Kristofvc\Component\Media
+        spec_path: src/component/Media
+        src_path: src/component/Media/src
