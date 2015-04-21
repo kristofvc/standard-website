@@ -7,6 +7,7 @@
         "psr-0": { "": "src/", "SymfonyStandard": "app/" },
         "psr-4": {
           "Kristofvc\\Web\\": "src/",
+          "Kristofvc\\Composer\\": "src/composer/",
           "Kristofvc\\Component\\": "src/component/",
           "Kristofvc\\Bundle\\": "src/bundle/",
           "Kristofvc\\Component\\Contact\\": "src/component/Contact/src",
@@ -45,13 +46,15 @@
             "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::removeSymfonyStandardFiles"
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::removeSymfonyStandardFiles",
+            "Kristofvc\\Composer\\Script\\Hooks::installHooks"
         ],
         "post-update-cmd": [
             "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::removeSymfonyStandardFiles"
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::removeSymfonyStandardFiles",
+            "Kristofvc\\Composer\\Script\\Hooks::installHooks"
         ]
     },
     "config": {
