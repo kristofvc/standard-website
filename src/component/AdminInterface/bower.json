@@ -1,0 +1,21 @@
+{
+  "name": "admin-interface",
+  "version": "0.0.1",
+  "authors": [
+    "Kristof Van Cauwenbergh <kristof.vancauwenbergh@gmail.com>"
+  ],
+  "main": "index.html",
+  "license": "MIT",
+  "homepage": "https://github.com/kristofvc/admin-interface",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "bootstrap": ">=3.3.4",
+    "jasny-bootstrap": ">=3.1.3"
+  }
+}
