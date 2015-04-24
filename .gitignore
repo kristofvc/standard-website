@@ -9,3 +9,4 @@ var/*
 bin/*
 !bin/console
 !bin/symfony_requirements
+src/component/AdminInterface/components
