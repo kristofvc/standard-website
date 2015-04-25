@@ -25,22 +25,33 @@
 
   <body>
     <nav class="navmenu navmenu-fixed-left navmenu-inverse" role="navigation">
-        <a class="navmenu-brand" href="#">Awesome team</a>
+        <ul class="nav navmenu-nav navmenu-head">
+          <li>
+            <a data-toggle="offcanvas" data-target=".navmenu" data-canvas=".canvas" data-autohide="false" href="#" class="mainmenu-toggle">
+              <h1><i class="fa fa-arrow-right"></i> Awesome team</h1>
+            </a>  
+          </li>
+        </ul>  
+        <ul class="nav navmenu-nav">
+          <li class="active"><a href="#"><i class="fa fa-file-text-o"></i> Pages</a></li>
+          <li><a href="#"><i class="fa fa-folder-o"></i> Files</a></li>
+          <li><a href="#"><i class="fa fa-lock"></i> Security</a></li>
+        </ul>  
+
+        <ul class="nav navmenu-nav" style="position: absolute; bottom: 10px;">
+          <li><a href="#"><i class="fa fa-sign-out"></i> Sign out</a></li>  
+        </ul>
     </nav>
 
-    <div class="canvas container-fluid">
+    <div class="canvas container-fluid canvas-closed">
       <div class="row">
         <div class="col-md-12 main">
-            <ol class="breadcrumb">
-                <li><a href="#">Home</a></li>
+            <ol class="breadcrumb">  
+                <li><a href="#">Admin</a></li>
                 <li class="active">Dashboard</li>
             </ol>
-            <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target=".navmenu" data-canvas=".canvas">
-                    <i class="fa fa-align-justify"></i>
-                </button>
-            <h1 class="page-header">
-                Dashboard
-            </h1>
+           
+            <h1 class="page-header"> Dashboard</h1>
         </div>
       </div>
     </div>

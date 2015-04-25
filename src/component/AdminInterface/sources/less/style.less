@@ -6,7 +6,7 @@
 
 @media (min-width: 992px) {
   body {
-    padding-left: 300px;
+    
   }
 }
 
@@ -23,13 +23,37 @@ html, body {
   z-index: 1;
 }
 
+.navmenu-head {
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px #aaa solid;
+}
+
+.navmenu-nav li {
+  font-size: 110%;
+}
+
+.navmenu-nav li h1 {
+  font-size: 130%;
+  margin: 0;
+}
+
+.navmenu-nav li i, .navmenu-nav li h1 i {
+  font-size: 140%;
+  width: 40px;
+}
+
 .canvas {
   position: relative;
   left: 0;
   z-index: 2;
   min-height: 100%;
-  padding: 50px 0 0 0;
+  padding: 20px !important;
   background: #fff;
+}
+
+.canvas-closed {
+  margin-left: 48px;
 }
 
 @media (min-width: 0) {
