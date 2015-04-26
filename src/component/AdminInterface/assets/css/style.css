@@ -80,11 +80,14 @@ body {
   float: left;
   margin-left: 15px;
 }
-.navmenu {
+.mainmenu {
   z-index: -1;
 }
 .submenu {
-  margin-left: 48px;
+  z-index: -1;
+}
+.submenu {
+  margin-left: 300px;
 }
 .navmenu-head {
   margin-bottom: 30px;
@@ -103,6 +106,10 @@ body {
   font-size: 140%;
   width: 40px;
 }
+.navmenu-nav-bottom {
+  position: absolute;
+  bottom: 10px;
+}
 .canvas-inner {
   position: relative;
   left: 0;
@@ -111,6 +118,13 @@ body {
   padding: 20px !important;
   background: #fff;
   background-size: cover;
+  margin-left: 300px;
+}
+.canvas-hide-submenu {
+  margin-left: 0px;
+}
+.canvas-hide-mainmenu {
+  margin-left: 48px;
 }
 @media (min-width: 0) {
   .navbar-toggle {

@@ -27,7 +27,7 @@
     <nav class="navmenu navmenu-fixed-left navmenu-inverse mainmenu" role="navigation">
         <ul class="nav navmenu-nav navmenu-head">
           <li>
-            <a data-toggle="offcanvas" data-target=".mainmenu" data-canvas=".canvas" data-autohide="false" href="#" class="mainmenu-toggle">
+            <a href="#" class="mainmenu-toggle">
               <h1><i class="fa fa-arrow-right"></i> Awesome team</h1>
             </a>  
           </li>
@@ -38,13 +38,13 @@
           <li class="active"><a href="#"><i class="fa fa-lock"></i> Security</a></li>
         </ul>  
 
-        <ul class="nav navmenu-nav" style="position: absolute; bottom: 10px;">
+        <ul class="nav navmenu-nav navmenu-nav-bottom">
           <li><a href="#"><i class="fa fa-sign-out"></i> Sign out</a></li>  
         </ul>
     </nav>
 
-    <div class="canvas canvas-closed">
-      <div class="navmenu navmenu-default navmenu-fixed-left submenu">
+    <div class="canvas">
+      <div class="navmenu navmenu-default navmenu-fixed-left submenu canvas-hide-mainmenu">
           <ul class="nav navmenu-nav">
             <li class="active"><a href="#"><i class="fa fa-users"></i> Users</a></li>
             <li><a href="#"><i class="fa fa-folder-o"></i> Groups</a></li>
@@ -60,7 +60,7 @@
                   <li class="active">Dashboard</li>
               </ol>
              
-              <a data-toggle="offcanvas" data-target=".submenu" data-canvas=".canvas-inner" data-autohide="false" href="#" class="submenu-toggle"><i class="fa fa-align-justify"></i></a>
+              <a href="#" class="submenu-toggle"><i class="fa fa-align-justify"></i></a>
             </a> 
               <h1 class="page-header"> Dashboard</h1>
           </div>
