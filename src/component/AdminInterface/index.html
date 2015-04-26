@@ -24,18 +24,18 @@
   </head>
 
   <body>
-    <nav class="navmenu navmenu-fixed-left navmenu-inverse" role="navigation">
+    <nav class="navmenu navmenu-fixed-left navmenu-inverse mainmenu" role="navigation">
         <ul class="nav navmenu-nav navmenu-head">
           <li>
-            <a data-toggle="offcanvas" data-target=".navmenu" data-canvas=".canvas" data-autohide="false" href="#" class="mainmenu-toggle">
+            <a data-toggle="offcanvas" data-target=".mainmenu" data-canvas=".canvas" data-autohide="false" href="#" class="mainmenu-toggle">
               <h1><i class="fa fa-arrow-right"></i> Awesome team</h1>
             </a>  
           </li>
         </ul>  
         <ul class="nav navmenu-nav">
-          <li class="active"><a href="#"><i class="fa fa-file-text-o"></i> Pages</a></li>
+          <li><a href="#"><i class="fa fa-file-text-o"></i> Pages</a></li>
           <li><a href="#"><i class="fa fa-folder-o"></i> Files</a></li>
-          <li><a href="#"><i class="fa fa-lock"></i> Security</a></li>
+          <li class="active"><a href="#"><i class="fa fa-lock"></i> Security</a></li>
         </ul>  
 
         <ul class="nav navmenu-nav" style="position: absolute; bottom: 10px;">
@@ -43,17 +43,30 @@
         </ul>
     </nav>
 
-    <div class="canvas container-fluid canvas-closed">
-      <div class="row">
-        <div class="col-md-12 main">
-            <ol class="breadcrumb">  
-                <li><a href="#">Admin</a></li>
-                <li class="active">Dashboard</li>
-            </ol>
-           
-            <h1 class="page-header"> Dashboard</h1>
+    <div class="canvas canvas-closed">
+      <div class="navmenu navmenu-default navmenu-fixed-left submenu">
+          <ul class="nav navmenu-nav">
+            <li class="active"><a href="#"><i class="fa fa-users"></i> Users</a></li>
+            <li><a href="#"><i class="fa fa-folder-o"></i> Groups</a></li>
+            <li><a href="#"><i class="fa fa-lock"></i> Roles</a></li>
+          </ul>
+      </div>
+
+      <div class="canvas-inner container-fluid">
+        <div class="row">
+          <div class="col-md-12 main">
+              <ol class="breadcrumb">  
+                  <li><a href="#">Admin</a></li>
+                  <li class="active">Dashboard</li>
+              </ol>
+             
+              <a data-toggle="offcanvas" data-target=".submenu" data-canvas=".canvas-inner" data-autohide="false" href="#" class="submenu-toggle"><i class="fa fa-align-justify"></i></a>
+            </a> 
+              <h1 class="page-header"> Dashboard</h1>
+          </div>
         </div>
       </div>
+
     </div>
 
     <script src="assets/js/app.min.js"></script>

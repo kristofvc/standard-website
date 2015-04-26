@@ -4,11 +4,15 @@
 
 $('.navmenu').on('click', '.mainmenu-toggle', function () {
 	if ($('.canvas').hasClass('canvas-closed')) {
-		$('.canvas').removeClass('canvas-closed');
+		setTimeout(function () {
+			$('.canvas').removeClass('canvas-closed');
+		}, 210);	
 		$(this).find('.fa').addClass('fa-arrow-left');
 		$(this).find('.fa').removeClass('fa-arrow-right');
 	} else {
-		$('.canvas').addClass('canvas-closed');
+		setTimeout(function () {
+			$('.canvas').addClass('canvas-closed');
+		}, 210);	
 		$(this).find('.fa').addClass('fa-arrow-right');
 		$(this).find('.fa').removeClass('fa-arrow-left');
 	}
