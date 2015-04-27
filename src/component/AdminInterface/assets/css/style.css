@@ -82,12 +82,14 @@ body {
 }
 .mainmenu {
   z-index: -1;
+  width: 250px;
 }
 .submenu {
   z-index: -1;
+  width: 260px;
 }
 .submenu {
-  margin-left: 300px;
+  margin-left: 250px;
 }
 .navmenu-head {
   margin-bottom: 30px;
@@ -118,7 +120,19 @@ body {
   padding: 20px !important;
   background: #fff;
   background-size: cover;
-  margin-left: 300px;
+  margin-left: 260px;
+}
+.canvas-sm-margin {
+  margin-left: 48px;
+}
+.canvas-md-margin {
+  margin-left: 260px;
+}
+.canvas-lg-margin {
+  margin-left: 462px;
+}
+.canvas-inner-no-margin {
+  margin-left: 250px;
 }
 .canvas-hide-submenu {
   margin-left: 0px;
