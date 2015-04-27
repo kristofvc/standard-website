@@ -16,7 +16,6 @@ function addRightClass(element) {
 	} else if ( $('.mainmenu').hasClass('mainmenu-open') ) {
 		element.addClass('canvas-md-margin');
 	} else if ( $('.submenu').hasClass('submenu-open') ) {
-		element.addClass('canvas-md-margin');
 	} else {
 		element.addClass('canvas-sm-margin');
 	}
@@ -65,7 +64,8 @@ $('.submenu-toggle').on('click', function (e) {
 		$('.submenu').addClass('submenu-open');
 	}
 
-
+	var element = $('.canvas-inner');
+	addRightClass(element);
 
 	/*if ($('.canvas-inner').hasClass('canvas-hide-submenu')) {
 		$('.canvas-inner').removeClass('canvas-hide-submenu');

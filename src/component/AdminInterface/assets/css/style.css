@@ -123,16 +123,16 @@ body {
   margin-left: 260px;
 }
 .canvas-sm-margin {
-  margin-left: 48px;
+  margin-left: 0px;
 }
 .canvas-md-margin {
-  margin-left: 260px;
+  margin-left: 203px;
 }
 .canvas-lg-margin {
   margin-left: 462px;
 }
 .canvas-inner-no-margin {
-  margin-left: 250px;
+  margin-left: 202px;
 }
 .canvas-hide-submenu {
   margin-left: 0px;
