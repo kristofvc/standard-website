@@ -71,25 +71,34 @@
 .modal-footer:after {
   clear: both;
 }
-html,
-body {
+html {
   height: 100%;
   padding-left: 48px;
+  background-color: #f8f8f8;
 }
-.navbar-toggle {
-  float: left;
-  margin-left: 15px;
+body {
+  padding: 0;
+  background-color: transparent;
 }
 .mainmenu {
   z-index: -1;
   width: 250px;
 }
 .submenu {
-  z-index: -1;
+  z-index: 0;
+  position: absolute;
   width: 260px;
-}
-.submenu {
   margin-left: 250px;
+  border: none;
+}
+.navbar {
+  right: auto;
+  background: none;
+  border: none;
+}
+.navbar-toggle {
+  float: left;
+  margin-left: 15px;
 }
 .navmenu-head {
   margin-bottom: 30px;
@@ -103,8 +112,11 @@ body {
   font-size: 130%;
   margin: 0;
 }
-.navmenu-nav li i,
 .navmenu-nav li h1 i {
+  font-size: 140%;
+  width: 40px;
+}
+.navmenu-nav li i {
   font-size: 140%;
   width: 40px;
 }
@@ -112,27 +124,29 @@ body {
   position: absolute;
   bottom: 10px;
 }
-.canvas-inner {
+.canvas {
+  padding: 0;
+}
+.canvas .canvas-inner {
   position: relative;
-  left: 0;
   z-index: 2;
   min-height: 100%;
-  padding: 20px !important;
-  background: #fff;
-  background-size: cover;
   margin-left: 260px;
 }
-.canvas-sm-margin {
+.canvas .canvas-inner .container-fluid {
+  padding: 20px;
+  background-color: #fff;
+  border-left: 1px solid #e7e7e7;
+  border-bottom: 1px solid #e7e7e7;
+}
+.canvas .canvas-sm-margin {
   margin-left: 0px;
 }
-.canvas-md-margin {
+.canvas .canvas-md-margin {
   margin-left: 203px;
 }
-.canvas-lg-margin {
+.canvas .canvas-lg-margin {
   margin-left: 462px;
-}
-.canvas-inner-no-margin {
-  margin-left: 202px;
 }
 .canvas-hide-submenu {
   margin-left: 0px;
@@ -140,23 +154,11 @@ body {
 .canvas-hide-mainmenu {
   margin-left: 48px;
 }
-@media (min-width: 0) {
-  .navbar-toggle {
-    display: block;
-    /* force showing the toggle */
-  }
-}
-@media (min-width: 992px) {
-  body {
-    padding: 0;
-  }
-  .navbar {
-    right: auto;
-    background: none;
-    border: none;
-  }
-  .canvas {
-    padding: 0;
-  }
+.footer {
+  color: #e7e7e7;
+  padding: 10px 20px;
+  display: block;
+  text-align: right;
+  background-color: #f8f8f8;
 }
 /*# sourceMappingURL=style.css.map */

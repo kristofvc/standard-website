@@ -4,20 +4,15 @@
 // Variables
 @path-img: '../../assets/img/';
 
-@media (min-width: 992px) {
-  body {
-    
-  }
-}
-
-html, body {
+html {
   height: 100%;
   padding-left: 48px;
+  background-color: #f8f8f8;
 }
 
-.navbar-toggle {
-  float: left;
-  margin-left: 15px;
+body {
+  padding: 0;
+  background-color: transparent;
 }
 
 .mainmenu {
@@ -26,12 +21,22 @@ html, body {
 }
 
 .submenu {
-  z-index: -1;
+  z-index: 0;
+  position: absolute;
   width: 260px;
+  margin-left: 250px;
+  border: none;
 }
 
-.submenu {
-  margin-left: 250px;
+.navbar {
+  right: auto;
+  background: none;
+  border: none;
+}
+
+.navbar-toggle {
+  float: left;
+  margin-left: 15px;
 }
 
 .navmenu-head {
@@ -42,16 +47,21 @@ html, body {
 
 .navmenu-nav li {
   font-size: 110%;
-}
 
-.navmenu-nav li h1 {
-  font-size: 130%;
-  margin: 0;
-}
+  h1 {
+    font-size: 130%;
+    margin: 0;
 
-.navmenu-nav li i, .navmenu-nav li h1 i {
-  font-size: 140%;
-  width: 40px;
+    i {
+      font-size: 140%;
+      width: 40px;
+    }
+  }
+  
+  i {
+    font-size: 140%;
+    width: 40px;
+  }
 }
 
 .navmenu-nav-bottom {
@@ -59,32 +69,34 @@ html, body {
    bottom: 10px;
 }
 
-.canvas-inner {
-  position: relative;
-  left: 0;
-  z-index: 2;
-  min-height: 100%;
-  padding: 20px !important;
-  background: #fff;
-  background-size: cover;
-  margin-left: 260px;
-}
+.canvas {
+  padding: 0;
 
+  .canvas-inner {
+    position: relative;
+    z-index: 2;
+    min-height: 100%;
+    margin-left: 260px;
 
-.canvas-sm-margin {
-  margin-left: 0px;
-}
+    .container-fluid {
+      padding: 20px;
+      background-color: #fff;
+      border-left: 1px solid #e7e7e7;
+      border-bottom: 1px solid #e7e7e7;
+    } 
+  }
 
-.canvas-md-margin {
-  margin-left: 203px;
-}
+  .canvas-sm-margin {
+    margin-left: 0px;
+  }
 
-.canvas-lg-margin {
-  margin-left: 462px;
-}
+  .canvas-md-margin {
+    margin-left: 203px;
+  }
 
-.canvas-inner-no-margin {
-  margin-left: 202px;
+  .canvas-lg-margin {
+    margin-left: 462px;
+  }
 }
 
 .canvas-hide-submenu {
@@ -95,23 +107,10 @@ html, body {
   margin-left: 48px;
 }
 
-@media (min-width: 0) {
-  .navbar-toggle {
-    display: block; /* force showing the toggle */
-  }
+.footer {
+  color: #e7e7e7;
+  padding: 10px 20px;
+  display: block;
+  text-align: right;
+  background-color: #f8f8f8;
 }
-
-@media (min-width: 992px) {
-  body {
-    padding: 0;
-  }
-  .navbar {
-    right: auto;
-    background: none;
-    border: none;
-  }
-  .canvas {
-    padding: 0;
-  }
-}
-
