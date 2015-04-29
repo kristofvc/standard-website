@@ -4,83 +4,75 @@
 // Variables
 @path-img: '../../assets/img/';
 
-html {
-  height: 100%;
-  padding-left: 48px;
-  background-color: #f8f8f8;
-}
-
 body {
+  background-color: #f8f8f8;
+  margin: 0;
   padding: 0;
-  background-color: transparent;
 }
 
 .mainmenu {
-  z-index: -1;
+  z-index: -2;
   width: 250px;
 }
 
 .submenu {
-  z-index: 0;
-  position: absolute;
+  z-index: -1;
+  left: 0;
   width: 260px;
+  border: none;
   margin-left: 250px;
-  border: none;
+  overflow-x: auto;
+  overflow-y: auto;
 }
 
-.navbar {
-  right: auto;
-  background: none;
-  border: none;
-}
+.navmenu {
+  .navmenu-head {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px #aaa solid;
+  }
 
-.navbar-toggle {
-  float: left;
-  margin-left: 15px;
-}
+  .navmenu-nav li {
+    font-size: 110%;
 
-.navmenu-head {
-  margin-bottom: 30px;
-  padding-bottom: 20px;
-  border-bottom: 1px #aaa solid;
-}
+    h1 {
+      font-size: 130%;
+      margin: 0;
 
-.navmenu-nav li {
-  font-size: 110%;
-
-  h1 {
-    font-size: 130%;
-    margin: 0;
-
+      i {
+        font-size: 140%;
+        width: 40px;
+      }
+    }
+    
     i {
       font-size: 140%;
       width: 40px;
     }
   }
-  
-  i {
-    font-size: 140%;
-    width: 40px;
-  }
-}
 
-.navmenu-nav-bottom {
-   position: absolute; 
-   bottom: 10px;
+  .navmenu-nav-bottom {
+     position: absolute; 
+     bottom: 10px;
+  }
 }
 
 .canvas {
   padding: 0;
+  position: absolute;
+  height: auto !important;
+  min-height: 100%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin-left: 48px;
 
   .canvas-inner {
-    position: relative;
-    z-index: 2;
-    min-height: 100%;
     margin-left: 260px;
-
+    background-color: #fff;
+   
     .container-fluid {
       padding: 20px;
-      background-color: #fff;
       border-left: 1px solid #e7e7e7;
       border-bottom: 1px solid #e7e7e7;
     } 
@@ -97,20 +89,16 @@ body {
   .canvas-lg-margin {
     margin-left: 462px;
   }
-}
 
-.canvas-hide-submenu {
-  margin-left: 0px;
-}
+  .canvas-hide-mainmenu {
+    margin-left: 48px;
+  }
 
-.canvas-hide-mainmenu {
-  margin-left: 48px;
-}
-
-.footer {
-  color: #e7e7e7;
-  padding: 10px 20px;
-  display: block;
-  text-align: right;
-  background-color: #f8f8f8;
+  .footer {
+    color: #e7e7e7;
+    padding: 10px 20px;
+    display: block;
+    text-align: right;
+    background-color: #f8f8f8;
+  }
 }
