@@ -28,8 +28,7 @@ framework:
 # Twig Configuration
 twig:
     form:
-        resources:
-            - "::Form/form_div_layout.html.twig"
+        resources: ~
     debug:            "%kernel.debug%"
     strict_variables: "%kernel.debug%"
 
