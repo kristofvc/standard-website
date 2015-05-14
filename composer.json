@@ -11,7 +11,8 @@
           "Kristofvc\\Component\\": "src/component/",
           "Kristofvc\\Bundle\\": "src/bundle/",
           "Kristofvc\\Component\\Contact\\": "src/component/Contact/src",
-          "Kristofvc\\Component\\Media\\": "src/component/Media/src"
+          "Kristofvc\\Component\\Media\\": "src/component/Media/src",
+          "Kristofvc\\Component\\User\\": "src/component/User/src"
         }
     },
     "require": {

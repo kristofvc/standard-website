@@ -4,6 +4,11 @@ suites:
         psr4_prefix: Kristofvc\Component\Contact
         spec_path: src/component/Contact
         src_path: src/component/Contact/src
+    User:
+        namespace: Kristofvc\Component\User
+        psr4_prefix: Kristofvc\Component\User
+        spec_path: src/component/User
+        src_path: src/component/User/src
     Media:
         namespace: Kristofvc\Component\Media
         psr4_prefix: Kristofvc\Component\Media
