@@ -16,3 +16,4 @@ This version of the component required at least PHP v5.4.
 ## Read more 
 - [Integrate with Symfony2](https://github.com/kristofvc/contact/blob/master/doc/symfony-integration.md)
 - [Integrate the persistence listener with Symfony2 and ORM](https://github.com/kristofvc/contact/blob/master/doc/orm-integration.md)
+- [Add Google recaptcha2](https://github.com/kristofvc/contact/blob/master/doc/add-recaptcha.md)
