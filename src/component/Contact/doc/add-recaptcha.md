@@ -33,6 +33,6 @@
 
 ```xml
     <property name="recaptcha">
-        <constraint name="EWZ\Bundle\RecaptchaBundle\Validator\Constraints\True" />
+        <constraint name="EWZ\Bundle\RecaptchaBundle\Validator\Constraints\IsTrue" />
     </property>
 ```
